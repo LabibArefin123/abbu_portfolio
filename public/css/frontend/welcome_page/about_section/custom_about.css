@@ -1,0 +1,46 @@
+.about-engineer {
+    background: #fff;
+}
+
+.counter-box {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card {
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.timeline-item {
+    padding: 20px;
+    border-left: 4px solid #0d6efd;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.training-section .col-md-3 {
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .about-engineer h2 {
+        font-size: 28px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .counter-box {
+        margin-bottom: 10px;
+    }
+}

@@ -31,6 +31,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about.css') }}">
 
     {{-- BACK TO TOP SECTION --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/back_to_top/bot_layout.css') }}">

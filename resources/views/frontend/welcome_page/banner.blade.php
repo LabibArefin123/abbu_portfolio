@@ -8,126 +8,140 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/banner_section/banner_doctor.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/banner_section/banner_responsive.css') }}">
 
-    <div id="slider" class="position-relative w-100" style="height:70vh;">
-        @php
-            $slides = [
-                [
-                    'image' => 'image_1.png',
-                    'align' => 'right',
-                    'name' => 'Prof. Dr. AKM Fazlul Haque',
-                    'designation' => 'Fellow, Colorectal Surgery (Singapore)',
-                    'details' => '
-                International Scholar, Colorectal Surgery (USA)<br>
-                Founder Chairman (Retd.), Department of Colorectal Surgery<br>
-                Bangladesh Medical University, Dhaka<br>
-                <strong>25 Years of Dedicated Service</strong>
+
+    @php
+        $slides = [
+            [
+                'image' => 'engineer_1.jpg',
+                'align' => 'right',
+                'name' => 'Engr. Md. Anwar Hossain',
+                'designation' => 'Former Additional Chief Engineer, LGED',
+                'details' => '
+                B.Sc Engineering (Civil), BUET<br>
+                M.S. in Environmental Science<br>
+                Fellow, Institution of Engineers Bangladesh<br>
+                43+ Years Professional Experience
             ',
-                    'route' => route('doc_1'),
-                ],
+                'route' => route('welcome'),
+            ],
 
-                [
-                    'image' => 'image_2.png',
-                    'align' => 'left',
-                    'name' => 'Dr. Asif Almas Haque',
-                    'designation' => 'MBBS (SSMC), MRCS (England)',
-                    'details' => '
-                FCPS (Surgery), FCPS (Colorectal Surgery), FRCS (England)<br>
-                Fellow of American College of Surgeons (FACS)<br>
-                Fellow of American Society of Colon & Rectal Surgeons (FASCRS)
+            [
+                'image' => 'bridge_1.jpg',
+                'align' => 'left',
+                'name' => 'Infrastructure Leadership',
+                'designation' => 'National Development Projects',
+                'details' => '
+                Project Director & Additional Chief Engineer<br>
+                Road, Bridge & Urban Infrastructure Development<br>
+                Procurement, Planning & Monitoring Specialist
             ',
-                    'route' => route('doc_2'),
-                ],
+                'route' => route('welcome'),
+            ],
 
-                [
-                    'image' => 'image_3.png',
-                    'align' => 'right',
-                    'name' => 'Dr. Fatema Sharmin (Anny)',
-                    'designation' => 'MBBS, DA, FCPS (Anaesthesiology)',
-                    'details' => '
-                Assistant Professor<br>
-                Department of Anaesthesiology<br>
-                Bangladesh Medical College Hospital, Dhanmondi<br>
-                Consultant (Anesthesiology)<br>
-                Dr. Fazlul Haque Colorectal Hospital Ltd.
+            [
+                'image' => 'bridge_2.jpg',
+                'align' => 'right',
+                'name' => 'Major Bridge Projects',
+                'designation' => 'Design & Supervision Engineer',
+                'details' => '
+                Chapail Bridge - 592m<br>
+                Shalotia Bridge - 810m<br>
+                Bancharampur Y Bridge - 771m
             ',
-                    'route' => route('doc_3'),
-                ],
+                'route' => route('welcome'),
+            ],
 
-                [
-                    'image' => 'image_4.png',
-                    'align' => 'left',
-                    'name' => 'Dr. Sakib Sarwat Haque',
-                    'designation' => 'MBBS (DU), FCPS (Surgery), MRCS (Edinburgh)',
-                    'details' => '
-                Colorectal Surgeon<br>
-                Director<br>
-                Dr. Fazlul Haque Colorectal Hospital Ltd.
+            [
+                'image' => 'flyover.jpg',
+                'align' => 'left',
+                'name' => 'Urban Mega Projects',
+                'designation' => 'Technical Leadership',
+                'details' => '
+                Tejgaon Flyover Project<br>
+                Rampura-Malibagh-Mouchak Flyover<br>
+                Urban Infrastructure Modernization
             ',
-                    'route' => route('doc_4'),
-                ],
+                'route' => route('welcome'),
+            ],
 
-                [
-                    'image' => 'image_5.png',
-                    'align' => 'right',
-                    'name' => 'Dr. Asma Husain Noora',
-                    'designation' => 'MBBS, FCPS (Surgery), MRCS (Edinburgh)',
-                    'details' => '
-                Consultant Surgeon<br>
-                Dr. Fazlul Haque Colorectal Hospital Ltd.
+            [
+                'image' => 'world.jpg',
+                'align' => 'right',
+                'name' => 'International Exposure',
+                'designation' => 'Training & Study Tours',
+                'details' => '
+                Japan, Thailand, Vietnam<br>
+                Malaysia, China, South Korea<br>
+                Italy & Portugal
             ',
-                    'route' => route('doc_5'),
-                ],
-            ];
-        @endphp
+                'route' => route('welcome'),
+            ],
+        ];
+    @endphp
 
-        {{-- Slides --}}
-        @foreach ($slides as $index => $slide)
-            <div class="slide {{ $index === 0 ? 'active' : '' }}" data-route="{{ $slide['route'] }}"
-                style="position:absolute; inset:0;">
+    @foreach ($slides as $index => $slide)
+        <div class="slide {{ $index == 0 ? 'active' : '' }}" data-route="{{ $slide['route'] }}"
+            style="position:absolute; inset:0;">
 
-                <div class="doctor-slide h-100">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
+            <div class="doctor-slide h-100">
 
-                            {{-- Image (Left) --}}
-                            @if ($slide['align'] === 'left')
-                                <div class="col-md-6 h-100 position-relative order-1 order-md-0">
-                                    <a href="{{ $slide['route'] }}" class="doctor-image-link">
-                                        <img src="{{ asset('uploads/images/welcome_page/slider/' . $slide['image']) }}"
-                                            class="doctor-img left" alt="{{ $slide['name'] }}">
-                                    </a>
-                                </div>
-                            @endif
+                <div class="container h-100">
 
+                    <div class="row h-100 align-items-center">
 
-                            {{-- Text Content --}}
-                            <div class="col-md-6 text-white z-2">
-                                <h2 class="fw-bold display-6 mb-2">{{ $slide['name'] }}</h2>
-                                <p class="fs-5 mb-2">{{ $slide['designation'] }}</p>
-                                <p class="lh-lg opacity-90">{!! $slide['details'] !!}</p>
+                        @if ($slide['align'] == 'left')
+                            <div class="col-lg-6 h-100 position-relative">
+                                <img src="{{ asset('uploads/images/banner/' . $slide['image']) }}"
+                                    class="doctor-img left" alt="{{ $slide['name'] }}">
                             </div>
+                        @endif
 
-                            {{-- Image (Right) --}}
-                            @if ($slide['align'] === 'right')
-                                <div class="col-md-6 h-100 position-relative">
-                                    <a href="{{ $slide['route'] }}" class="doctor-image-link">
-                                        <img src="{{ asset('uploads/images/welcome_page/slider/' . $slide['image']) }}"
-                                            class="doctor-img right" alt="{{ $slide['name'] }}">
-                                    </a>
-                                </div>
-                            @endif
+                        <div class="col-lg-6 text-white z-2">
+
+                            <span class="badge bg-warning text-dark mb-3">
+                                Engineering Excellence
+                            </span>
+
+                            <h1 class="fw-bold display-5">
+                                {{ $slide['name'] }}
+                            </h1>
+
+                            <h4 class="mb-3">
+                                {{ $slide['designation'] }}
+                            </h4>
+
+                            <p class="lh-lg">
+                                {!! $slide['details'] !!}
+                            </p>
+
+                            <a href="{{ $slide['route'] }}" class="btn btn-warning btn-lg">
+                                Explore More
+                            </a>
+
                         </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
 
-        {{-- Dots --}}
-        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 z-3 d-flex gap-2">
-            @foreach ($slides as $i => $slide)
-                <span class="dot" onclick="goToSlide({{ $i }})"></span>
-            @endforeach
+                        @if ($slide['align'] == 'right')
+                            <div class="col-lg-6 h-100 position-relative">
+                                <img src="{{ asset('uploads/images/banner/' . $slide['image']) }}"
+                                    class="doctor-img right" alt="{{ $slide['name'] }}">
+                            </div>
+                        @endif
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+    @endforeach
+
+    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 z-3 d-flex gap-2">
+        @foreach ($slides as $i => $slide)
+            <span class="dot" onclick="goToSlide({{ $i }})"></span>
+        @endforeach
+    </div>
+
 
     </div>
 </section>
