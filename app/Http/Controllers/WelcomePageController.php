@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\Training;
+use App\Models\SupervisionExperience;
 use App\Models\SystemProblem;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -30,6 +31,13 @@ class WelcomePageController extends Controller
                 'internationalTrainings'
             )
         );
+    }
+
+    public function experience_g()
+    {
+        $experience = SupervisionExperience::latest()->first();
+
+        return view('frontend.cv.design_supervision', compact('experience'));
     }
 
     
