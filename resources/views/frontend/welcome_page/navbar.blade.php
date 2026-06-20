@@ -13,46 +13,34 @@
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_overlay.css') }}">
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_sidebar.css') }}">
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_mobile_dropdown.css') }}">
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white bg-info"
-    style="padding-left: 30px; padding-right: 30px;">
-    <div class="container-fluid">
+<nav class="main-header navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+
+
+    <div class="container-fluid px-4">
 
         {{-- ==========================================
-    LOGO
-========================================== --}}
+        BRAND
+    ========================================== --}}
         <a href="{{ route('welcome') }}" class="navbar-brand">
 
-            @php
-                $logoPath = null;
+            <div class="brand-wrapper">
 
-                if (!empty($orgPicture)) {
-                    foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
-                        $path = public_path('uploads/images/backend/organization/' . $orgPicture . '.' . $ext);
+                <h5 class="mb-0 text-warning fw-bold">
+                    Engr. Md. Anwar Hossain
+                </h5>
 
-                        if (file_exists($path)) {
-                            $logoPath = asset('uploads/images/backend/organization/' . $orgPicture . '.' . $ext);
+                <small class="text-light">
+                    Former Additional Chief Engineer, LGED
+                </small>
 
-                            break;
-                        }
-                    }
-                }
-            @endphp
-
-            @if ($logoPath)
-                <img src="{{ $logoPath }}" alt="{{ $orgName }}" class="brand-image elevation-3"
-                    style="width:350px;height:75px;object-fit:contain;">
-            @else
-                <img src="{{ asset('uploads/images/logo.png') }}" alt="Default Logo" class="brand-image elevation-3"
-                    style="width:350px;height:75px;object-fit:contain;">
-            @endif
+            </div>
 
         </a>
 
-
         {{-- ==========================================
-    MOBILE TOGGLER
-========================================== --}}
-        <button type="button" id="navbarToggle" class="custom-navbar-toggler" aria-label="Open Menu">
+        MOBILE TOGGLE
+    ========================================== --}}
+        <button type="button" id="navbarToggle" class="custom-navbar-toggler">
 
             <span></span>
             <span></span>
@@ -60,18 +48,21 @@
 
         </button>
 
-
         {{-- ==========================================
-    MOBILE SIDEBAR
-========================================== --}}
+        MOBILE OVERLAY
+    ========================================== --}}
         <div class="mobile-navbar-overlay"></div>
 
-
+        {{-- ==========================================
+        MOBILE SIDEBAR
+    ========================================== --}}
         <div class="mobile-navbar">
 
             <div class="mobile-navbar-header">
 
-                <h5 class="mb-0">Menu</h5>
+                <h5 class="mb-0">
+                    Portfolio Menu
+                </h5>
 
                 <button type="button" class="mobile-navbar-close">
                     &times;
@@ -83,7 +74,7 @@
 
                 <li>
                     <a href="{{ route('welcome') }}">
-                        Overview
+                        Home
                     </a>
                 </li>
 
@@ -94,83 +85,32 @@
                 </li>
 
                 <li>
-                    <a href="#departments">
-                        Departments
-                    </a>
-                </li>
-
-                {{-- Facilities --}}
-                <li class="mobile-dropdown">
-
-                    <a href="javascript:void(0)" class="mobile-dropdown-toggle">
-
-                        Facilities
-
-                        <span class="dropdown-arrow">
-                            <i class="fas fa-chevron-right"></i>
-                        </span>
-
-                    </a>
-
-                    <ul class="mobile-submenu">
-
-                        <li><a href="{{ route('facility_1') }}">Emergency Department</a></li>
-                        <li><a href="{{ route('facility_2') }}">Intensive Care Unit (ICU)</a></li>
-                        <li><a href="{{ route('facility_3') }}">Operation Theatre (OT)</a></li>
-                        <li><a href="{{ route('facility_4') }}">Post Operative Room</a></li>
-                        <li><a href="{{ route('facility_5') }}">Ward</a></li>
-                        <li><a href="{{ route('facility_6') }}">Cabin</a></li>
-                        <li><a href="{{ route('facility_7') }}">Laboratory</a></li>
-                        <li><a href="{{ route('facility_8') }}">Radiology & Imaging</a></li>
-                        <li><a href="{{ route('facility_9') }}">ECG</a></li>
-                        <li><a href="{{ route('facility_10') }}">Colonoscopy</a></li>
-                        <li><a href="{{ route('facility_11') }}">Pharmacy</a></li>
-                        <li><a href="{{ route('facility_12') }}">24-Hour Ambulance Service</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li>
-                    <a href="#services">
-                        Services
-                    </a>
-                </li>
-
-                {{-- Specialists --}}
-                <li class="mobile-dropdown">
-
-                    <a href="javascript:void(0)" class="mobile-dropdown-toggle">
-
-                        Our Specialists
-
-                        <span class="dropdown-arrow">
-                            <i class="fas fa-chevron-right"></i>
-                        </span>
-
-                    </a>
-
-                    <ul class="mobile-submenu">
-
-                        <li><a href="{{ route('doc_1') }}">Prof. Dr. AKM Fazlul Haque</a></li>
-                        <li><a href="{{ route('doc_2') }}">Dr. Asif Almas Haque</a></li>
-                        <li><a href="{{ route('doc_3') }}">Dr. Fatema Sharmin (Anny)</a></li>
-                        <li><a href="{{ route('doc_4') }}">Dr. Sakib Sarwat Haque</a></li>
-                        <li><a href="{{ route('doc_5') }}">Dr. Asma Husain Noora</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li>
-                    <a href="#goals">
-                        Our Goals
+                    <a href="#career">
+                        Career Journey
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('login') }}">
-                        Hospital Login
+                    <a href="#projects">
+                        Major Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#achievements">
+                        Achievements
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#training">
+                        Training
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
                     </a>
                 </li>
 
@@ -178,145 +118,78 @@
 
         </div>
 
-
-
-
         {{-- ==========================================
-    DESKTOP NAVIGATION
-========================================== --}}
-        <div class="collapse navbar-collapse justify-content-center order-2" id="navbarCollapse">
+        DESKTOP NAVIGATION
+    ========================================== --}}
+        <div class="collapse navbar-collapse justify-content-center">
 
             <ul class="navbar-nav">
 
-                {{-- Overview --}}
                 <li class="nav-item">
-
                     <a href="{{ route('welcome') }}"
                         class="nav-link custom-link {{ request()->routeIs('welcome') ? 'active' : '' }}">
-
-                        Overview
-
+                        Home
                     </a>
-
                 </li>
 
-                {{-- About --}}
                 <li class="nav-item">
-
                     <a href="#about" class="nav-link custom-link">
-
                         About
-
                     </a>
-
                 </li>
 
-                {{-- Departments --}}
                 <li class="nav-item">
-
-                    <a href="#departments" class="nav-link custom-link">
-
-                        Departments
-
+                    <a href="#career" class="nav-link custom-link">
+                        Career
                     </a>
-
                 </li>
 
-                {{-- Facilities --}}
-                <li class="nav-item dropdown" id="facility_dropdown">
-
-                    <a href="#facilities" class="nav-link custom-link dropdown-toggle" role="button">
-
-                        Facilities
-
-                    </a>
-
-                    <ul class="dropdown-menu">
-
-                        <li><a href="{{ route('facility_1') }}" class="dropdown-item">Emergency Department</a></li>
-                        <li><a href="{{ route('facility_2') }}" class="dropdown-item">Intensive Care Unit (ICU)</a>
-                        </li>
-                        <li><a href="{{ route('facility_3') }}" class="dropdown-item">Operation Theatre (OT)</a></li>
-                        <li><a href="{{ route('facility_4') }}" class="dropdown-item">Post Operative Room</a></li>
-                        <li><a href="{{ route('facility_5') }}" class="dropdown-item">Ward</a></li>
-                        <li><a href="{{ route('facility_6') }}" class="dropdown-item">Cabin</a></li>
-                        <li><a href="{{ route('facility_7') }}" class="dropdown-item">Laboratory</a></li>
-                        <li><a href="{{ route('facility_8') }}" class="dropdown-item">Radiology & Imaging</a></li>
-                        <li><a href="{{ route('facility_9') }}" class="dropdown-item">ECG</a></li>
-                        <li><a href="{{ route('facility_10') }}" class="dropdown-item">Colonoscopy</a></li>
-                        <li><a href="{{ route('facility_11') }}" class="dropdown-item">Pharmacy</a></li>
-                        <li><a href="{{ route('facility_12') }}" class="dropdown-item">24-Hour Ambulance Service</a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                {{-- Services --}}
                 <li class="nav-item">
-
-                    <a href="#services" class="nav-link custom-link">
-
-                        Services
-
+                    <a href="#projects" class="nav-link custom-link">
+                        Projects
                     </a>
-
                 </li>
 
-                {{-- Specialists --}}
-                <li class="nav-item dropdown">
-
-                    <a href="#specialists" class="nav-link custom-link dropdown-toggle">
-
-                        Our Specialists
-
-                    </a>
-
-                    <ul class="dropdown-menu">
-
-                        <li><a href="{{ route('doc_1') }}" class="dropdown-item">Prof. Dr. AKM Fazlul Haque</a></li>
-                        <li><a href="{{ route('doc_2') }}" class="dropdown-item">Dr. Asif Almas Haque</a></li>
-                        <li><a href="{{ route('doc_3') }}" class="dropdown-item">Dr. Fatema Sharmin (Anny)</a></li>
-                        <li><a href="{{ route('doc_4') }}" class="dropdown-item">Dr. Sakib Sarwat Haque</a></li>
-                        <li><a href="{{ route('doc_5') }}" class="dropdown-item">Dr. Asma Husain Noora</a></li>
-
-                    </ul>
-
-                </li>
-
-                {{-- Goals --}}
                 <li class="nav-item">
-
-                    <a href="#goals" class="nav-link custom-link">
-
-                        Our Goals
-
+                    <a href="#achievements" class="nav-link custom-link">
+                        Achievements
                     </a>
+                </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('training') }}" class="nav-link custom-link">
+                        Training
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link custom-link">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
 
         </div>
 
-
         {{-- ==========================================
-    LOGIN BUTTON
-========================================== --}}
-        <div class="order-3 ml-auto d-flex align-items-center">
+        RIGHT BUTTON
+    ========================================== --}}
+        <div class="d-flex align-items-center">
 
-            <a href="{{ route('login') }}" class="btn login-btn me-2">
+            <a href="#contact" class="btn login-btn">
 
-                Hospital Login
+                Contact Me
 
             </a>
 
         </div>
 
-
-
     </div>
+
+
 </nav>
+
 
 <!------start of welcome link js--->
 <script>

@@ -7,141 +7,121 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/banner_section/banner_slide.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/banner_section/banner_doctor.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/banner_section/banner_responsive.css') }}">
+    <div id="slider" class="portfolio-slider">
 
 
-    @php
-        $slides = [
-            [
-                'image' => 'engineer_1.jpg',
-                'align' => 'right',
-                'name' => 'Engr. Md. Anwar Hossain',
-                'designation' => 'Former Additional Chief Engineer, LGED',
-                'details' => '
-                B.Sc Engineering (Civil), BUET<br>
-                M.S. in Environmental Science<br>
-                Fellow, Institution of Engineers Bangladesh<br>
-                43+ Years Professional Experience
-            ',
-                'route' => route('welcome'),
-            ],
+        @php
+            $slides = [
+                [
+                    'title' => 'Engr. Md. Anwar Hossain',
+                    'subtitle' => 'Former Additional Chief Engineer, LGED',
+                    'content' =>
+                        '43+ years of professional experience in Civil Engineering, Bridge Construction, Project Management and Infrastructure Development.',
+                ],
 
-            [
-                'image' => 'bridge_1.jpg',
-                'align' => 'left',
-                'name' => 'Infrastructure Leadership',
-                'designation' => 'National Development Projects',
-                'details' => '
-                Project Director & Additional Chief Engineer<br>
-                Road, Bridge & Urban Infrastructure Development<br>
-                Procurement, Planning & Monitoring Specialist
-            ',
-                'route' => route('welcome'),
-            ],
+                [
+                    'title' => 'Infrastructure Leadership',
+                    'subtitle' => 'National Development Projects',
+                    'content' =>
+                        'Served as Assistant Engineer, Executive Engineer, Project Director, Superintending Engineer and Additional Chief Engineer.',
+                ],
 
-            [
-                'image' => 'bridge_2.jpg',
-                'align' => 'right',
-                'name' => 'Major Bridge Projects',
-                'designation' => 'Design & Supervision Engineer',
-                'details' => '
-                Chapail Bridge - 592m<br>
-                Shalotia Bridge - 810m<br>
-                Bancharampur Y Bridge - 771m
-            ',
-                'route' => route('welcome'),
-            ],
+                [
+                    'title' => 'Major Bridge Projects',
+                    'subtitle' => 'Design & Supervision Engineer',
+                    'content' =>
+                        'Successfully supervised and monitored PSC Girder, RCC and Box Girder Bridges throughout Bangladesh.',
+                ],
 
-            [
-                'image' => 'flyover.jpg',
-                'align' => 'left',
-                'name' => 'Urban Mega Projects',
-                'designation' => 'Technical Leadership',
-                'details' => '
-                Tejgaon Flyover Project<br>
-                Rampura-Malibagh-Mouchak Flyover<br>
-                Urban Infrastructure Modernization
-            ',
-                'route' => route('welcome'),
-            ],
+                [
+                    'title' => 'Mega Flyover Projects',
+                    'subtitle' => 'Urban Infrastructure Development',
+                    'content' =>
+                        'Technical supervision of Tejgaon Flyover and Rampura-Malibagh-Mouchak Flyover Projects.',
+                ],
 
-            [
-                'image' => 'world.jpg',
-                'align' => 'right',
-                'name' => 'International Exposure',
-                'designation' => 'Training & Study Tours',
-                'details' => '
-                Japan, Thailand, Vietnam<br>
-                Malaysia, China, South Korea<br>
-                Italy & Portugal
-            ',
-                'route' => route('welcome'),
-            ],
-        ];
-    @endphp
+                [
+                    'title' => 'International Experience',
+                    'subtitle' => 'Training & Study Tours',
+                    'content' =>
+                        'Professional training and study visits in Japan, Thailand, Vietnam, China, Malaysia, South Korea, Italy and Portugal.',
+                ],
+            ];
+        @endphp
 
-    @foreach ($slides as $index => $slide)
-        <div class="slide {{ $index == 0 ? 'active' : '' }}" data-route="{{ $slide['route'] }}"
-            style="position:absolute; inset:0;">
-
-            <div class="doctor-slide h-100">
+        @foreach ($slides as $index => $slide)
+            <div class="portfolio-slide {{ $index == 0 ? 'active' : '' }}">
 
                 <div class="container h-100">
 
-                    <div class="row h-100 align-items-center">
+                    <div class="row justify-content-center align-items-center h-100">
 
-                        @if ($slide['align'] == 'left')
-                            <div class="col-lg-6 h-100 position-relative">
-                                <img src="{{ asset('uploads/images/banner/' . $slide['image']) }}"
-                                    class="doctor-img left" alt="{{ $slide['name'] }}">
+                        <div class="col-lg-10">
+
+                            <div class="portfolio-content">
+
+                                <span class="portfolio-badge">
+                                    Engineering Excellence
+                                </span>
+
+                                <h1>
+                                    {{ $slide['title'] }}
+                                </h1>
+
+                                <h4>
+                                    {{ $slide['subtitle'] }}
+                                </h4>
+
+                                <p>
+                                    {{ $slide['content'] }}
+                                </p>
+
+                                <div class="portfolio-stats">
+
+                                    <div class="stat-box">
+                                        <h3>43+</h3>
+                                        <span>Years Experience</span>
+                                    </div>
+
+                                    <div class="stat-box">
+                                        <h3>100+</h3>
+                                        <span>Projects</span>
+                                    </div>
+
+                                    <div class="stat-box">
+                                        <h3>BUET</h3>
+                                        <span>Civil Engineer</span>
+                                    </div>
+
+                                    <div class="stat-box">
+                                        <h3>LGED</h3>
+                                        <span>Leadership</span>
+                                    </div>
+
+                                </div>
+
                             </div>
-                        @endif
-
-                        <div class="col-lg-6 text-white z-2">
-
-                            <span class="badge bg-warning text-dark mb-3">
-                                Engineering Excellence
-                            </span>
-
-                            <h1 class="fw-bold display-5">
-                                {{ $slide['name'] }}
-                            </h1>
-
-                            <h4 class="mb-3">
-                                {{ $slide['designation'] }}
-                            </h4>
-
-                            <p class="lh-lg">
-                                {!! $slide['details'] !!}
-                            </p>
-
-                            <a href="{{ $slide['route'] }}" class="btn btn-warning btn-lg">
-                                Explore More
-                            </a>
 
                         </div>
-
-                        @if ($slide['align'] == 'right')
-                            <div class="col-lg-6 h-100 position-relative">
-                                <img src="{{ asset('uploads/images/banner/' . $slide['image']) }}"
-                                    class="doctor-img right" alt="{{ $slide['name'] }}">
-                            </div>
-                        @endif
 
                     </div>
 
                 </div>
 
             </div>
+        @endforeach
+
+        <div class="slider-dots">
+
+            @foreach ($slides as $i => $slide)
+                <span class="dot {{ $i == 0 ? 'active' : '' }}" onclick="goToSlide({{ $i }})">
+                </span>
+            @endforeach
 
         </div>
-    @endforeach
-
-    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 z-3 d-flex gap-2">
-        @foreach ($slides as $i => $slide)
-            <span class="dot" onclick="goToSlide({{ $i }})"></span>
-        @endforeach
-    </div>
 
 
     </div>
+
+
 </section>

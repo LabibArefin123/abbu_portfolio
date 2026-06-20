@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+    .training-hero {
+        padding: 80px 20px;
+    }
+
+    .training-hero h1 {
+        font-size: 2rem;
+    }
+
+    .training-card {
+        margin-bottom: 15px;
+    }
+}

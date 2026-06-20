@@ -1,0 +1,11 @@
+.training-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    height:100%;
+}
+
+.training-card h4{
+    color:#0f172a;
+}

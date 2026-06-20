@@ -1,29 +1,23 @@
 /* =========================
-   TEXT CONTENT
+PORTFOLIO CONTENT
 ========================= */
 
-.doctor-slide h2 {
-    letter-spacing: 0.3px;
-    color: #8b0000;
+.portfolio-content h1 {
+    letter-spacing: 1px;
 }
 
-.doctor-slide p {
-    font-size: 1.05rem;
-    color: #333;
+.portfolio-content h4 {
+    font-weight: 500;
 }
 
-/* EXTRA FIX FOR AKM (RIGHT IMAGE SLIDE) */
-
-.slide:first-child .col-md-6.text-white {
-    padding-right: 3rem;
-    padding-left: 1.5rem;
+.portfolio-content p {
+    color: #e2e8f0;
 }
 
-.doctor-image-link img {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.portfolio-content a {
+    margin-top: 20px;
 }
 
-.doctor-image-link img:hover {
-    transform: scale(1.03);
+.portfolio-badge {
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.4);
 }

@@ -1,18 +1,23 @@
-/* =========================
-   DOT INDICATORS
-========================= */
-
 .dot {
     width: 14px;
     height: 14px;
-    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .dot.active {
-    background-color: #ff6b6b;
-    width: 16px;
-    height: 16px;
+    background: #f59e0b;
+    transform: scale(1.2);
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 99;
 }

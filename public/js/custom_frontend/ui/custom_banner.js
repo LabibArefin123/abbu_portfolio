@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.getElementById("slider");
 
-    // ✅ Stop if slider does not exist (other pages)
+    // Stop if slider doesn't exist
     if (!slider) return;
 
     let currentIndex = 0;
-    const slides = slider.querySelectorAll(".slide");
-    const dots = slider.querySelectorAll(".dot");
-    const link = document.getElementById("doctorLink");
 
-    // ✅ Stop if no slides
+    const slides = slider.querySelectorAll(".portfolio-slide");
+    const dots = slider.querySelectorAll(".dot");
+
     if (slides.length === 0) return;
 
     function showSlide(index) {
@@ -21,33 +20,36 @@ document.addEventListener("DOMContentLoaded", function () {
             dot.classList.toggle("active", i === index);
         });
 
-        if (link) {
-            const route = slides[index].dataset.route;
-
-            if (route) {
-                link.href = route;
-                link.style.pointerEvents = "auto";
-            } else {
-                link.href = "javascript:void(0)";
-                link.style.pointerEvents = "none";
-            }
-        }
-
         currentIndex = index;
     }
 
     function nextSlide() {
-        showSlide((currentIndex + 1) % slides.length);
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
     }
 
     function prevSlide() {
-        showSlide((currentIndex - 1 + slides.length) % slides.length);
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+
+        showSlide(prevIndex);
     }
 
+    // Global function for dots
     window.goToSlide = function (index) {
         showSlide(index);
     };
 
-    setInterval(nextSlide, 15000);
+    // Auto Slide
+    let autoSlide = setInterval(nextSlide, 8000);
+
+    // Pause when user hovers
+    slider.addEventListener("mouseenter", () => {
+        clearInterval(autoSlide);
+    });
+
+    slider.addEventListener("mouseleave", () => {
+        autoSlide = setInterval(nextSlide, 8000);
+    });
+
     showSlide(0);
 });

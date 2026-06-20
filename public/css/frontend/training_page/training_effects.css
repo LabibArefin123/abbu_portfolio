@@ -1,0 +1,9 @@
+.training-card,
+.country-card{
+    transition:.3s;
+}
+
+.training-card:hover,
+.country-card:hover{
+    transform:translateY(-6px);
+}

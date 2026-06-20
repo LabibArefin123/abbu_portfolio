@@ -26,28 +26,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
+Route::get('/training', [WelcomePageController::class, 'training'])->name('training');
 Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
-
-//Specialist Part
-Route::get('/prof-dr-akm-fazlul-hoque', [WelcomePageController::class, 'doc_1'])->name('doc_1');
-Route::get('/dr-asif-almas-haque', [WelcomePageController::class, 'doc_2'])->name('doc_2');
-Route::get('/dr-fatema-sharmin-anny', [WelcomePageController::class, 'doc_3'])->name('doc_3');
-Route::get('/dr-sakib-sarwat-haque', [WelcomePageController::class, 'doc_4'])->name('doc_4');
-Route::get('/dr-asma-husain-noora', [WelcomePageController::class, 'doc_5'])->name('doc_5');
-
-//Facility Part 
-Route::get('/emergency-department', [WelcomePageController::class, 'facility_1_emergency'])->name('facility_1');
-Route::get('/intensive-care-unit-icu', [WelcomePageController::class, 'facility_2_icu'])->name('facility_2');
-Route::get('/operation-theater-ot', [WelcomePageController::class, 'facility_3_ot'])->name('facility_3');
-Route::get('/post-operative-recovery-room', [WelcomePageController::class, 'facility_4_post_op'])->name('facility_4');
-Route::get('/ward', [WelcomePageController::class, 'facility_5_ward'])->name('facility_5');
-Route::get('/cabin', [WelcomePageController::class, 'facility_6_cabin'])->name('facility_6');
-Route::get('/laboratory', [WelcomePageController::class, 'facility_7_laboratory'])->name('facility_7');
-Route::get('/radiology-and-imaging', [WelcomePageController::class, 'facility_8_radiology_and_image'])->name('facility_8');
-Route::get('/ecg', [WelcomePageController::class, 'facility_9_ecg'])->name('facility_9');
-Route::get('/colonoscopy', [WelcomePageController::class, 'facility_10_colonoscopy'])->name('facility_10');
-Route::get('/pharmacy', [WelcomePageController::class, 'facility_11_pharmacy'])->name('facility_11');
-Route::get('/24-hour-ambulance-service', [WelcomePageController::class, 'facility_12_emergency'])->name('facility_12');
 
 Route::get('/user_profile', function () {
     return view('user_profile');
@@ -71,29 +51,6 @@ Route::group(['middleware' => ['auth', 'check_banned_device', 'detect.attack', '
     Route::put('/user_password_update', [ProfileController::class, 'updatePassword'])->name('user_password_update');
     Route::get('/user_password_edit', [ProfileController::class, 'editPassword'])->name('user_password_edit');
     Route::get('/user_password_reset', [ProfileController::class, 'resetPassword'])->name('user_password_reset');
-
-    Route::get('/patients/recommend', [PatientController::class, 'patient_recommend'])->name('patients.recommend');
-    Route::post('patients/export-excel', [PatientController::class, 'exportExcel'])->name('patients.export.excel');
-    Route::post('patients/export-pdf', [PatientController::class, 'exportPdf'])->name('patients.export.pdf');
-    Route::post('patients/import-excel', [PatientController::class, 'importExcel'])->name('patients.import.excel');
-    Route::post('patients/import-word', [PatientController::class, 'importWord'])->name('patients.import.word');
-    Route::get('/patients/{id}/print-card', [PatientController::class, 'printCard'])->name('patients.print_card');
-    Route::post('patients/delete-selected', [PatientController::class, 'deleteSelected'])->name('patients.delete_selected');
-    Route::resource('patients', PatientController::class);
-
-    //Report Module
-    Route::get('daily_report', [ReportController::class, 'daily_report'])->name('report.daily');
-    Route::get('daily_report/pdf', [ReportController::class, 'daily_report_pdf'])->name('report.daily.pdf');
-    Route::get('reports/weekly', [ReportController::class, 'weekly_report'])->name('report.weekly');
-    Route::get('reports/weekly/pdf', [ReportController::class, 'weekly_report_pdf'])->name('report.weekly.pdf');
-    Route::get('reports/monthly', [ReportController::class, 'monthly_report'])->name('report.monthly');
-    Route::get('reports/monthly/pdf', [ReportController::class, 'monthly_report_pdf'])->name('report.monthly.pdf');
-    Route::get('reports/yearly', [ReportController::class, 'yearly_report'])->name('report.yearly');
-    Route::get('reports/yearly/pdf', [ReportController::class, 'yearly_report_pdf'])->name('report.yearly.pdf');
-    Route::get('daily_report/excel', [ReportController::class, 'daily_report_excel'])->name('report.daily.excel');
-    Route::get('reports/weekly/excel', [ReportController::class, 'weekly_report_excel'])->name('report.weekly.excel');
-    Route::get('reports/monthly/excel', [ReportController::class, 'monthly_report_excel'])->name('report.monthly.excel');
-    Route::get('reports/yearly/excel', [ReportController::class, 'yearly_report_excel'])->name('report.yearly.excel');
 
     //Setting Management
     Route::resource('roles', RoleController::class);

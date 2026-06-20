@@ -54,6 +54,12 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/image_part/image_modal_content.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/image_part/image_modal_close.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_cards.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_country.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_effects.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_responsive.css') }}">
+
     {{-- LOGIN PAGE SECTION --}}
     <link rel="stylesheet" href="{{ asset('css/backend/login_page/login_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/backend/login_page/login_layout.css') }}">
