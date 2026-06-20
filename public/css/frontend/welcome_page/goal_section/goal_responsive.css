@@ -1,0 +1,118 @@
+/* ===================================
+TABLET
+=================================== */
+
+@media (max-width: 991.98px) {
+    .goal-section {
+        padding: 60px 0;
+    }
+
+    .goal-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .goal-image-wrapper {
+        height: 380px;
+        margin-top: 30px;
+    }
+
+    .goal-image {
+        max-width: 90%;
+        object-fit: contain;
+    }
+}
+
+/* ===================================
+MOBILE
+=================================== */
+/* ===================================
+MOBILE
+=================================== */
+
+@media (max-width: 767.98px) {
+    .goal-section {
+        padding: 50px 0;
+    }
+
+    .goal-title {
+        font-size: 1.7rem;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .goal-item {
+        margin-bottom: 25px;
+    }
+
+    .goal-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 18px;
+    }
+
+    .goal-content h6 {
+        font-size: 1rem;
+    }
+
+    .goal-content p {
+        font-size: 0.92rem;
+    }
+
+    /* Image below text */
+    .col-lg-6:last-child {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .about-image-placeholder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-image-placeholder img,
+    .magnify-img {
+        width: 50%;
+        max-width: 220px;
+        height: auto !important;
+        max-height: 240px !important;
+        object-fit: contain !important;
+        margin: 0 auto;
+        display: block;
+    }
+}
+/* ===================================
+SMALL MOBILE
+=================================== */
+
+@media (max-width: 575.98px) {
+    .goal-title {
+        font-size: 1.5rem;
+    }
+
+    .goal-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        font-size: 16px;
+        margin-right: 12px;
+    }
+
+    .goal-content h6 {
+        font-size: 0.95rem;
+    }
+
+    .goal-content p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+    }
+
+    .about-image-placeholder img,
+    .magnify-img {
+        width: 85%;
+        max-width: 3000px;
+        max-height: 300px !important;
+    }
+}

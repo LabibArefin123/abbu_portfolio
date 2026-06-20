@@ -1,0 +1,15 @@
+/* ===================================
+   LINKS
+=================================== */
+
+.header-link {
+    color: #dc3545;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.header-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
