@@ -146,7 +146,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#projects" class="nav-link custom-link">
+                    <a href="{{ route('project') }}" class="nav-link custom-link">
                         Projects
                     </a>
                 </li>

@@ -1,0 +1,59 @@
+.project-filter-card{
+
+    background:#fff;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    margin:40px auto;
+
+    box-shadow:0 5px 25px rgba(15,23,42,.08);
+
+    border:1px solid #e2e8f0;
+}
+
+.project-filter-box{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr auto;
+
+    gap:15px;
+
+    align-items:end;
+}
+
+.project-filter-box input,
+.project-filter-box select{
+
+    height:48px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:10px;
+
+    padding:0 15px;
+}
+
+.project-filter-box button{
+
+    height:48px;
+
+    padding:0 25px;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    border-radius:10px;
+}
+
+@media(max-width:768px){
+
+    .project-filter-box{
+        grid-template-columns:1fr;
+    }
+}

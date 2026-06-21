@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use App\Models\Contact;
 use App\Models\Career;
+use App\Models\Project;
 use App\Models\Training;
 use App\Models\Achievement;
 use App\Models\SupervisionExperience;
@@ -189,7 +190,63 @@ class WelcomePageController extends Controller
             });
     }
 
+    public function project()
+    {
+        $projects = Project::orderBy('sort_order')
+            ->get();
 
+        return view(
+            'frontend.project_page.project',
+            compact('projects')
+        );
+    }
+
+    public function projectAjax(Request $request)
+    {
+        try {
+
+            $query = Project::query();
+
+            if ($request->filled('search')) {
+
+                $search = trim($request->search);
+
+                $query->where(function ($q) use ($search) {
+
+                    $q->where('project_name', 'LIKE', "%{$search}%")
+                        ->orWhere('location', 'LIKE', "%{$search}%")
+                        ->orWhere('river_name', 'LIKE', "%{$search}%")
+                        ->orWhere('project_type', 'LIKE', "%{$search}%")
+                        ->orWhere('description', 'LIKE', "%{$search}%");
+                });
+            }
+
+            if ($request->filled('project_type')) {
+
+                $query->where(
+                    'project_type',
+                    $request->project_type
+                );
+            }
+
+            $projects = $query
+                ->orderBy('sort_order')
+                ->get();
+
+            return response()->json([
+                'success' => true,
+                'count' => $projects->count(),
+                'data' => $projects
+            ]);
+        } catch (\Exception $e) {
+
+            \Log::error($e);
+
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
     public function achievement()
     {
         $achievements = Achievement::orderBy('sort_order')->get();

@@ -31,6 +31,8 @@ Route::get('/career', [WelcomePageController::class, 'career'])->name('career');
 Route::get('/training', [WelcomePageController::class, 'training'])->name('training');
 Route::get('/experiences', [WelcomePageController::class, 'experience'])->name('experience');
 Route::get('/experiences/ajax', [WelcomePageController::class, 'experienceAjax'])->name('experience.ajax');
+Route::get('/projects', [WelcomePageController::class, 'project'])->name('project');
+Route::get('/projects/ajax', [WelcomePageController::class, 'projectAjax'])->name('project.ajax');
 Route::get('/achievements', [WelcomePageController::class, 'achievement'])->name('achievement');
 Route::get('/contact', [WelcomePageController::class, 'contact_index'])->name('contact');
 Route::post('/contact', [WelcomePageController::class, 'contact_store'])->name('contact.store');

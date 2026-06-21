@@ -64,6 +64,14 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_highlight.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_responsive.css') }}">
 
+    {{-- PROJECT PAGE --}}
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_search.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_hero.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_cards.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter.css') }}">
+
     {{-- TRAINING PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_layout.css') }}">
@@ -165,7 +173,7 @@
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
 
     {{-- =========================
-     Experience Page Scripts
+     Experience Page Scripts START
    ========================= --}}
     {{-- Helper functions (escape HTML, nl2br, highlight, word count) --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_helpers.js') }}"></script>
@@ -183,7 +191,24 @@
     <script src="{{ asset('js/custom_frontend/experience_page/experience_highlight.js') }}"></script>
 
     {{-- =========================
-     End Experience Filter JS
+      Experience Page Scripts END
+   ========================= --}}
+
+    {{-- =========================
+     Project Page Scripts
+   ========================= --}}
+
+    {{-- Project Card Rendering UI --}}
+    <script src="{{ asset('js/custom_frontend/project_page/project_render.js') }}"></script>
+
+    {{-- Project Card Helper UI --}}
+    <script src="{{ asset('js/custom_frontend/project_page/project_helpers.js') }}"></script>
+
+    {{-- Project Search, Filter & AJAX Handler --}}
+    <script src="{{ asset('js/custom_frontend/project_page/project_search.js') }}"></script>
+
+    {{-- =========================
+     End Project Page Scripts
    ========================= --}}
 
     {{-- =========================
