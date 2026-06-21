@@ -164,35 +164,64 @@
     {{-- End of SweetAlert2 notifications --}}
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
 
-    {{-- Experience Filter --}}
-    <script src="{{ asset('js/custom_frontend/experience_page/experience_filter.js') }}"></script> {{-- Experience Filter JS --}}
-    <script src="{{ asset('js/custom_frontend/experience_page/experience_highlight.js') }}"></script> {{-- Experience Filter JS --}}
+    {{-- =========================
+     Experience Page Scripts
+   ========================= --}}
+    {{-- Helper functions (escape HTML, nl2br, highlight, word count) --}}
+    <script src="{{ asset('js/custom_frontend/experience_page/experience_helpers.js') }}"></script>
 
-    {{-- Career Timeline --}}
-    <script src="{{ asset('js/custom_frontend/career_page/career_journey.js') }}"></script> {{-- Experience Filter JS --}}
+    {{-- HTML rendering logic (experience cards + suggestion box UI) --}}
+    <script src="{{ asset('js/custom_frontend/experience_page/experience_render.js') }}"></script>
 
-    {{-- NAVIGATION SECTION --}}
+    {{-- AJAX / API call handler (fetch experience data from backend) --}}
+    <script src="{{ asset('js/custom_frontend/experience_page/experience_fetch.js') }}"></script>
+
+    {{-- Main controller (handles input events, filtering, rendering flow) --}}
+    <script src="{{ asset('js/custom_frontend/experience_page/experience_main.js') }}"></script>
+
+    {{-- Click highlight + scroll-to-card functionality (suggestion click) --}}
+    <script src="{{ asset('js/custom_frontend/experience_page/experience_highlight.js') }}"></script>
+
+    {{-- =========================
+     End Experience Filter JS
+   ========================= --}}
+
+    {{-- =========================
+     NAVIGATION SECTION
+   ========================= --}}
+
     <script src="{{ asset('js/custom_frontend/navigation/welcome_navigation.js') }}"></script> {{-- Welcome Navigation JS --}}
-    <script src="{{ asset('js/custom_frontend/navigation/navbar-toggle.js') }}"></script> {{-- Navbar Toggle JS --}}
-    <script src="{{ asset('js/custom_frontend/navigation/scroll_progress.js') }}"></script> {{-- Scroll Progress JS --}}
+    <script src="{{ asset('js/custom_frontend/navigation/navbar-toggle.js') }}"></script> {{-- Navbar Toggle (mobile menu open/close) JS --}}
+    <script src="{{ asset('js/custom_frontend/navigation/scroll_progress.js') }}"></script> {{-- Scroll Progress Indicator JS --}}
 
-    {{-- MAPS SECTION --}}
-    <script src="{{ asset('js/custom_frontend/maps/custom_top_map.js') }}"></script> {{-- Top Map Modal JS --}}
 
-    {{-- MODAL SECTION --}}
+    {{-- =========================
+     MAPS SECTION
+   ========================= --}}
+
+    <script src="{{ asset('js/custom_frontend/maps/custom_top_map.js') }}"></script> {{-- Top Map Modal / Interactive Map JS --}}
+
+
+    {{-- =========================
+     MODAL SECTION
+   ========================= --}}
+
     <script src="{{ asset('js/custom_frontend/modals/phone.js') }}"></script> {{-- Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/modals/land_phone.js') }}"></script> {{-- Land Phone Modal JS --}}
-    <script src="{{ asset('js/custom_frontend/modals/language.js') }}"></script> {{-- Language Modal JS --}}
-    <script src="{{ asset('js/custom_frontend/modals/magnified_image_modal.js') }}"></script> {{-- Magnified Image Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/language.js') }}"></script> {{-- Language Selection Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/magnified_image_modal.js') }}"></script> {{-- Image Zoom / Magnifier Modal JS --}}
     <script src="{{ asset('js/custom_frontend/modals/custom_footer_modal.js') }}"></script> {{-- Footer Modal JS --}}
-    <script src="{{ asset('js/custom_frontend/modals/location_footer_config.js') }}"></script> {{-- Footer Location Config JS --}}
-    <script src="{{ asset('js/custom_frontend/modals/location_footer_actions.js') }}"></script> {{-- Footer Location Action JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/location_footer_config.js') }}"></script> {{-- Footer Location Configuration JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/location_footer_actions.js') }}"></script> {{-- Footer Location Actions JS --}}
 
-    {{-- UI SECTION --}}
-    <script src="{{ asset('js/custom_frontend/ui/custom_banner.js') }}"></script> {{-- banner aniamtion JS --}}
+
+    {{-- =========================
+     UI / COMPONENTS SECTION
+   ========================= --}}
+
+    <script src="{{ asset('js/custom_frontend/ui/custom_banner.js') }}"></script> {{-- Banner Animation JS --}}
     <script src="{{ asset('js/custom_frontend/ui/facility_dropdown.js') }}"></script> {{-- Facility Dropdown JS --}}
-    <script src="{{ asset('js/custom_frontend/ui/custom_back_top_button.js') }}"></script> {{-- Back to Top JS --}}
-
+    <script src="{{ asset('js/custom_frontend/ui/custom_back_top_button.js') }}"></script> {{-- Back to Top Button JS --}}
 
 </body>
 

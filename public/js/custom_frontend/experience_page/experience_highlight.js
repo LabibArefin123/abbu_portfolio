@@ -1,19 +1,16 @@
 document.addEventListener("click", function (e) {
-    if (!e.target.classList.contains("search-item")) {
-        return;
-    }
+    const item = e.target.closest(".search-item");
 
-    let id = e.target.dataset.id;
+    if (!item) return;
 
-    let card = document.getElementById("experience-" + id);
+    const id = item.dataset.id;
+    const card = document.getElementById("experience-" + id);
 
-    if (!card) {
-        return;
-    }
+    if (!card) return;
 
-    document.querySelectorAll(".experience-card").forEach((c) => {
-        c.classList.remove("highlight-card");
-    });
+    document
+        .querySelectorAll(".experience-card")
+        .forEach((c) => c.classList.remove("highlight-card"));
 
     card.classList.add("highlight-card");
 

@@ -22,52 +22,51 @@
 
     </section>
 
-    <div class="container">
-        <div class="experience-filter-card">
-
-            <div class="filter-title">
-                <i class="fas fa-filter"></i>
-                <span>Filter Experience Records</span>
-            </div>
-
-            <div class="experience-filter-box">
-
-                <div class="filter-group">
-                    <label>Search</label>
-                    <input type="text" id="searchInput" placeholder="Position, project or keyword">
-                </div>
-
-                <div class="filter-group">
-                    <label>From Date</label>
-                    <input type="date" id="fromDate">
-                </div>
-
-                <div class="filter-group">
-                    <label>To Date</label>
-                    <input type="date" id="toDate">
-                </div>
-
-                <div class="filter-action">
-                    <button id="resetFilter">
-                        <i class="fas fa-undo"></i> Reset
-                    </button>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
     <section class="experience-section">
-        <div class="experience-search-result">
-
-            <div id="resultCountBox" class="result-count-box">
-                Showing all experience records
+        <div class="container">
+            <div class="experience-filter-card">
+    
+                <div class="filter-title">
+                    <i class="fas fa-filter"></i>
+                    <span>Filter Experience Records</span>
+                </div>
+    
+                <div class="experience-filter-box">
+    
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" id="searchInput" placeholder="Position, project or keyword">
+                    </div>
+    
+                    <div class="filter-group">
+                        <label>From Date</label>
+                        <input type="date" id="fromDate">
+                    </div>
+    
+                    <div class="filter-group">
+                        <label>To Date</label>
+                        <input type="date" id="toDate">
+                    </div>
+    
+                    <div class="filter-action">
+                        <button id="resetFilter">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+    
+                </div>
             </div>
-
-            <div id="searchSuggestionBox" class="search-suggestion-box"></div>
-
+            <div class="experience-search-result">
+    
+                <div id="resultCountBox" class="result-count-box">
+                    Showing all experience records
+                </div>
+    
+                <div id="searchSuggestionBox" class="search-suggestion-box"></div>
+    
+            </div>
         </div>
+
         <div class="container">
 
             <div id="experienceContainer">
