@@ -31,3 +31,12 @@ function normalizeText(text) {
 function countWords(text) {
     return normalizeText(text).split(" ").filter(Boolean).length;
 }
+
+function countMatches(text, keyword) {
+    if (!text || !keyword) return 0;
+
+    const safe = text.toLowerCase();
+    const key = keyword.toLowerCase();
+
+    return (safe.match(new RegExp(key, "g")) || []).length;
+}

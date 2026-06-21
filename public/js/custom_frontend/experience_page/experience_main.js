@@ -8,21 +8,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultBox = document.querySelector("#resultCountBox");
     const suggestionBox = document.querySelector("#searchSuggestionBox");
 
+    let hasSearched = false;
+
     function loadData() {
+        const keyword = search.value.trim();
+
+        // If empty search → reset UI (IMPORTANT FIX)
+        if (!keyword && !from.value && !to.value) {
+            container.innerHTML = originalHTML; // we will store it
+            resultBox.innerHTML = "Showing all experience records";
+            suggestionBox.innerHTML = "";
+            hasSearched = false;
+            return;
+        }
+
         const params = new URLSearchParams({
-            search: search.value.trim(),
+            search: keyword,
             from_date: from.value,
             to_date: to.value,
         });
 
         fetchExperienceData(params, (err, res) => {
             if (err || !res.success) {
-                console.error(err || res.message);
                 resultBox.innerHTML = "❌ Failed to load data";
                 return;
             }
 
-            const keyword = search.value.trim();
+            hasSearched = true;
 
             resultBox.innerHTML =
                 res.count > 0
@@ -30,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     : `❌ No Experience Found`;
 
             container.innerHTML = "";
-            suggestionBox.innerHTML = "";
 
             if (res.count === 0) {
                 container.innerHTML = `
@@ -45,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .map((item) => renderExperienceCard(item, keyword))
                 .join("");
 
-            suggestionBox.innerHTML = renderSuggestions(res.data);
+            suggestionBox.innerHTML = renderSuggestions(res.data, keyword);
         });
     }
 
@@ -55,11 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     reset.addEventListener("click", (e) => {
         e.preventDefault();
+
         search.value = "";
         from.value = "";
         to.value = "";
-        loadData();
+
+        container.innerHTML = originalHTML;
+        resultBox.innerHTML = "Showing all experience records";
+        suggestionBox.innerHTML = "";
     });
 
-    loadData();
+    // store original HTML (IMPORTANT)
+    const originalHTML = container.innerHTML;
 });

@@ -1,4 +1,10 @@
 function renderExperienceCard(item, keyword = "") {
+    const showStats = keyword && keyword.trim() !== "";
+
+    const matchCount = showStats
+        ? countMatches(item.description + " " + item.responsibilities, keyword)
+        : 0;
+
     return `
     <div class="experience-card" id="experience-${item.id}">
 
@@ -24,29 +30,39 @@ function renderExperienceCard(item, keyword = "") {
                 : ""
         }
 
+        ${
+            showStats
+                ? `
         <div class="word-count">
-            🧮 Words: ${
-                countWords(item.description) + countWords(item.responsibilities)
-            }
+            🔍 Matches: ${matchCount}
         </div>
+        `
+                : ""
+        }
 
     </div>
     `;
 }
 
-function renderSuggestions(data) {
+function renderSuggestions(data, keyword = "") {
+    if (!keyword) return "";
+
     return data
         .map((item) => {
-            const words = countWords(item.position + " " + item.description);
+            const text = (item.position + " " + item.description).toLowerCase();
+
+            const matchCount = (
+                text.match(new RegExp(keyword.toLowerCase(), "g")) || []
+            ).length;
 
             return `
             <div class="search-item" data-id="${item.id}">
                 <div class="suggestion-title">
-                    ${item.position}
+                    ${highlightText(item.position, keyword)}
                 </div>
 
                 <div class="suggestion-meta">
-                    🧮 ${words} words
+                    🔍 ${matchCount} matches
                 </div>
             </div>
         `;
