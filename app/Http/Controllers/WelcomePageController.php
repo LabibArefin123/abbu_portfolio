@@ -51,49 +51,144 @@ class WelcomePageController extends Controller
         );
     }
 
-    public function experience(Request $request)
+    public function experience()
     {
-        if ($request->ajax()) {
+        $experiences = $this->formatExperience(
+            SupervisionExperience::query()
+        );
+
+
+        return view(
+            'frontend.experience_page.experience',
+            compact('experiences')
+        );
+    }
+
+    public function experienceAjax(Request $request)
+    {
+        try {
+
 
             $query = SupervisionExperience::query();
 
-            // keyword search
-            if ($request->search) {
-                $query->where(function ($q) use ($request) {
-                    $q->where('position', 'like', "%{$request->search}%")
-                        ->orWhere('description', 'like', "%{$request->search}%")
-                        ->orWhere('location', 'like', "%{$request->search}%");
+            if ($request->filled('search')) {
+
+                $search = trim($request->search);
+
+                $query->where(function ($q) use ($search) {
+
+                    $q->where('position', 'LIKE', "%{$search}%")
+                        ->orWhere('location', 'LIKE', "%{$search}%")
+                        ->orWhere('description', 'LIKE', "%{$search}%")
+                        ->orWhere('responsibilities', 'LIKE', "%{$search}%");
                 });
             }
 
-            // date filter (duration format: dd-mm-yyyy to dd-mm-yyyy)
-            if ($request->from_date || $request->to_date) {
+            if ($request->filled('from_date')) {
 
-                $query->where(function ($q) use ($request) {
-
-                    if ($request->from_date) {
-                        $q->whereRaw("STR_TO_DATE(SUBSTRING_INDEX(duration,' to ',1),'%d-%m-%Y') >= STR_TO_DATE(?,'%Y-%m-%d')", [
-                            $request->from_date
-                        ]);
-                    }
-
-                    if ($request->to_date) {
-                        $q->whereRaw("STR_TO_DATE(SUBSTRING_INDEX(duration,' to ',-1),'%d-%m-%Y') <= STR_TO_DATE(?,'%Y-%m-%d')", [
-                            $request->to_date
-                        ]);
-                    }
-                });
+                $query->whereRaw(
+                    "STR_TO_DATE(SUBSTRING_INDEX(duration,' to ',1),'%d-%m-%Y') >= STR_TO_DATE(?,'%Y-%m-%d')",
+                    [$request->from_date]
+                );
             }
+
+            if ($request->filled('to_date')) {
+
+                $query->whereRaw(
+                    "STR_TO_DATE(SUBSTRING_INDEX(duration,' to ',-1),'%d-%m-%Y') <= STR_TO_DATE(?,'%Y-%m-%d')",
+                    [$request->to_date]
+                );
+            }
+
+            $experiences = $this->formatExperience($query);
 
             return response()->json([
-                'data' => $query->orderBy('sort_order')->get()
+                'success' => true,
+                'count' => $experiences->count(),
+                'data' => $experiences
             ]);
+        } catch (\Exception $e) {
+
+            \Log::error('Experience AJAX Error', [
+                'message' => $e->getMessage(),
+                'line' => $e->getLine(),
+                'file' => $e->getFile()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong.'
+            ], 500);
         }
-
-        $experiences = SupervisionExperience::orderBy('sort_order')->get();
-
-        return view('frontend.experience_page.experience', compact('experiences'));
     }
+
+    private function formatExperience($query)
+    {
+        return $query
+            ->orderBy('sort_order')
+            ->get()
+            ->map(function ($item) {
+
+
+                try {
+
+                    $dates = explode(' to ', $item->duration ?? '');
+
+                    $from = !empty($dates[0])
+                        ? Carbon::createFromFormat('d-m-Y', trim($dates[0]))->format('d F Y')
+                        : '';
+
+                    $to = !empty($dates[1])
+                        ? Carbon::createFromFormat('d-m-Y', trim($dates[1]))->format('d F Y')
+                        : '';
+
+                    $item->formatted_duration = "{$from} - {$to}";
+                } catch (\Exception $e) {
+
+                    \Log::error('Experience Date Error', [
+                        'duration' => $item->duration,
+                        'message' => $e->getMessage()
+                    ]);
+
+                    $item->formatted_duration = $item->duration;
+                }
+
+                $item->description = preg_replace_callback(
+                    '/\b(\d{2}-\d{2}-\d{4})\b/',
+                    function ($matches) {
+
+                        try {
+                            return Carbon::createFromFormat(
+                                'd-m-Y',
+                                $matches[1]
+                            )->format('d F Y');
+                        } catch (\Exception $e) {
+                            return $matches[1];
+                        }
+                    },
+                    $item->description ?? ''
+                );
+
+                $item->responsibilities = preg_replace_callback(
+                    '/\b(\d{2}-\d{2}-\d{4})\b/',
+                    function ($matches) {
+
+                        try {
+                            return Carbon::createFromFormat(
+                                'd-m-Y',
+                                $matches[1]
+                            )->format('d F Y');
+                        } catch (\Exception $e) {
+                            return $matches[1];
+                        }
+                    },
+                    $item->responsibilities ?? ''
+                );
+
+                return $item;
+            });
+    }
+
 
     public function achievement()
     {

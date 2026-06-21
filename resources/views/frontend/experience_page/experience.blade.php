@@ -22,57 +22,91 @@
 
     </section>
 
+    <div class="container">
+        <div class="experience-filter-card">
 
-    <div class="experience-filter-box">
+            <div class="filter-title">
+                <i class="fas fa-filter"></i>
+                <span>Filter Experience Records</span>
+            </div>
 
-        <input type="text" id="searchInput" placeholder="Search position / project..." />
+            <div class="experience-filter-box">
 
-        <input type="date" id="fromDate" />
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" id="searchInput" placeholder="Position, project or keyword">
+                </div>
 
-        <input type="date" id="toDate" />
+                <div class="filter-group">
+                    <label>From Date</label>
+                    <input type="date" id="fromDate">
+                </div>
 
-        <button id="resetFilter">Reset</button>
+                <div class="filter-group">
+                    <label>To Date</label>
+                    <input type="date" id="toDate">
+                </div>
 
+                <div class="filter-action">
+                    <button id="resetFilter">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-    <section class="experience-section">
 
+    <section class="experience-section">
+        <div class="experience-search-result">
+
+            <div id="resultCountBox" class="result-count-box">
+                Showing all experience records
+            </div>
+
+            <div id="searchSuggestionBox" class="search-suggestion-box"></div>
+
+        </div>
         <div class="container">
 
-            @foreach ($experiences as $experience)
-                <div class="experience-card">
+            <div id="experienceContainer">
+                @foreach ($experiences as $experience)
+                    <div class="experience-card" id="experience-{{ $experience->id }}">
 
-                    <div class="experience-header">
+                        <div class="experience-header">
 
-                        <h3>
-                            {{ $experience->position }}
-                        </h3>
+                            <h3>
+                                {{ $experience->position }}
+                            </h3>
 
-                        <span>
-                            {{ \Carbon\Carbon::createFromFormat('d-m-Y', trim(explode(' to ', $experience->duration)[0]))->format('d F Y') }}
-                            -
-                            {{ \Carbon\Carbon::createFromFormat('d-m-Y', trim(explode(' to ', $experience->duration)[1]))->format('d F Y') }}
-                        </span>
-
-                    </div>
-
-                    <div class="experience-body">
-                        <div class="description-responsibility">
-                            {!! nl2br(e($experience->description)) !!}
-                        </div>
-
-                    </div>
-
-                    @if ($experience->responsibilities)
-                        <div class="experience-responsibility">
-
-                            {!! nl2br(e($experience->responsibilities)) !!}
+                            <span>
+                                {{ \Carbon\Carbon::createFromFormat('d-m-Y', trim(explode(' to ', $experience->duration)[0]))->format('d F Y') }}
+                                -
+                                {{ \Carbon\Carbon::createFromFormat('d-m-Y', trim(explode(' to ', $experience->duration)[1]))->format('d F Y') }}
+                            </span>
 
                         </div>
-                    @endif
 
-                </div>
-            @endforeach
+                        <div class="experience-body">
+                            <div class="description-responsibility">
+                                {!! nl2br(e($experience->description)) !!}
+                            </div>
 
+                        </div>
+
+                        @if ($experience->responsibilities)
+                            <div class="experience-responsibility">
+
+                                {!! nl2br(e($experience->responsibilities)) !!}
+
+                            </div>
+                        @endif
+
+                    </div>
+                @endforeach
+
+            </div>
         </div>
 
     </section>

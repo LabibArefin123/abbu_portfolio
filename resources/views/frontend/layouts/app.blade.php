@@ -61,6 +61,7 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_cards.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_timeline.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_filter.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_highlight.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_responsive.css') }}">
 
     {{-- TRAINING PAGE --}}
@@ -165,6 +166,7 @@
 
     {{-- Experience Filter --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_filter.js') }}"></script> {{-- Experience Filter JS --}}
+    <script src="{{ asset('js/custom_frontend/experience_page/experience_highlight.js') }}"></script> {{-- Experience Filter JS --}}
 
     {{-- Career Timeline --}}
     <script src="{{ asset('js/custom_frontend/career_page/career_journey.js') }}"></script> {{-- Experience Filter JS --}}

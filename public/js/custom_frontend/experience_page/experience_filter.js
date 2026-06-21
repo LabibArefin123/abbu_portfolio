@@ -1,77 +1,103 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let searchInput = document.getElementById("searchInput");
-    let fromDate = document.getElementById("fromDate");
-    let toDate = document.getElementById("toDate");
-    let resetBtn = document.getElementById("resetFilter");
-    let container = document.getElementById("experienceContainer");
+document.addEventListener("DOMContentLoaded", () => {
+    const search = document.querySelector("#searchInput");
+    const from = document.querySelector("#fromDate");
+    const to = document.querySelector("#toDate");
+    const reset = document.querySelector("#resetFilter");
 
-    function renderCard(item) {
-        let fromTo = item.duration.split(" to ");
+    const container = document.querySelector("#experienceContainer");
+    const resultBox = document.querySelector("#resultCountBox");
+    const suggestionBox = document.querySelector("#searchSuggestionBox");
 
-        let from = fromTo[0] ?? "";
-        let to = fromTo[1] ?? "";
+    const renderCard = (item) => `
+    <div class="experience-card" id="experience-${item.id}">
 
-        return `
-        <div class="experience-card">
+        <div class="experience-header">
+            <h3>${item.position ?? ""}</h3>
+            <span>${item.formatted_duration ?? ""}</span>
+        </div>
 
-            <div class="experience-header">
-                <h3 class="position-title">${item.position}</h3>
-
-                <span class="duration-badge">
-                    ${from} - ${to}
-                </span>
-            </div>
-
-            <div class="experience-body">
+        <div class="experience-body">
+            <div class="description-responsibility">
                 ${item.description ?? ""}
             </div>
+        </div>
 
-            ${
-                item.responsibilities
-                    ? `
+        ${
+            item.responsibilities
+                ? `
             <div class="experience-responsibility">
                 <h4>Key Responsibilities</h4>
                 ${item.responsibilities}
             </div>
-            `
-                    : ""
-            }
-
-        </div>`;
-    }
+        `
+                : ""
+        }
+    </div>
+`;
 
     function fetchData() {
-        fetch(
-            `/experience?search=${searchInput.value}&from_date=${fromDate.value}&to_date=${toDate.value}`,
-            {
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest",
-                },
-            },
-        )
+        const params = new URLSearchParams({
+            search: search.value.trim(),
+            from_date: from.value,
+            to_date: to.value,
+        });
+
+        fetch(`/experiences/ajax?${params}`)
             .then((res) => res.json())
             .then((res) => {
-                container.innerHTML = "";
+                if (!res.success) {
+                    throw new Error(res.message);
+                }
 
-                if (!res.data.length) {
-                    container.innerHTML = `<p style="text-align:center;">No experience found</p>`;
+                resultBox.innerHTML =
+                    res.count > 0
+                        ? `✅ Found ${res.count} Experience Record(s)`
+                        : `❌ No Experience Found`;
+
+                container.innerHTML = "";
+                suggestionBox.innerHTML = "";
+
+                if (res.count === 0) {
+                    container.innerHTML = `
+                <div class="experience-card">
+                    No matching experience found.
+                </div>
+            `;
+
                     return;
                 }
 
-                res.data.forEach((item) => {
-                    container.innerHTML += renderCard(item);
-                });
+                container.innerHTML = res.data.map(renderCard).join("");
+
+                suggestionBox.innerHTML = res.data
+                    .map(
+                        (item) => `
+                <div class="search-item"
+                     data-id="${item.id}">
+                    ${item.position}
+                </div>
+            `,
+                    )
+                    .join("");
+            })
+            .catch((error) => {
+                console.error("Experience AJAX Error:", error);
+
+                resultBox.innerHTML = "❌ Failed to load data";
             });
     }
 
-    searchInput.addEventListener("keyup", fetchData);
-    fromDate.addEventListener("change", fetchData);
-    toDate.addEventListener("change", fetchData);
+    search.addEventListener("input", fetchData);
+    from.addEventListener("change", fetchData);
+    to.addEventListener("change", fetchData);
 
-    resetBtn.addEventListener("click", function () {
-        searchInput.value = "";
-        fromDate.value = "";
-        toDate.value = "";
+    reset.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        search.value = "";
+        from.value = "";
+        to.value = "";
+
         fetchData();
     });
 });

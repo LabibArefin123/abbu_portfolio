@@ -1,28 +1,90 @@
-.experience-filter-box {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+/* Filter Card */
+.experience-filter-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 40px auto;
+    box-shadow: 0 5px 25px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e2e8f0;
 }
 
-.experience-filter-box input {
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+/* Header */
+.filter-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.filter-title i {
+    color: #2563eb;
+    font-size: 1.2rem;
+}
+
+/* Filter Layout */
+.experience-filter-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: end;
+}
+
+/* Input Groups */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.filter-group input {
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.filter-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
     outline: none;
+}
+
+/* Button */
+.filter-action button {
+    height: 48px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.experience-filter-box input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+.filter-action button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
 }
 
-.experience-filter-box button {
-    padding: 10px 16px;
-    background: #222;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+/* Mobile */
+@media (max-width: 768px) {
+    .experience-filter-box {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-action button {
+        width: 100%;
+    }
 }
