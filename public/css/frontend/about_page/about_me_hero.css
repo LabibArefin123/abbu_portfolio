@@ -1,0 +1,17 @@
+.about-me-hero {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.about-me-hero h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.about-me-hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}

@@ -21,7 +21,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // PermissionSeeder::class,
             // TrainingSeeder::class,
-            ProfessioanalExperienceGSeeder::class,
+            // ProfessionalExperienceASeeder::class,
+            // ProfessionalExperienceBSeeder::class,
+            // ProfessionalExperienceCSeeder::class,
+            // ProfessionalExperienceDSeeder::class,
+            // ProfessionalExperienceESeeder::class,
+            // ProfessionalExperienceFSeeder::class,
+            ProfessionalExperienceGSeeder::class,
+            ProfessionalExperienceGResponsibilitiesSeeder::class,
             // UserSeeder::class,
         ]);
     }

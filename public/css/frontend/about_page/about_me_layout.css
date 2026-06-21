@@ -1,0 +1,20 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.info-row {
+    display: flex;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+}
+
+.info-row span {
+    width: 220px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.info-row p {
+    margin: 0;
+}

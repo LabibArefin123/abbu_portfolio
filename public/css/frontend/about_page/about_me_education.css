@@ -1,0 +1,29 @@
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+
+.education-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-card h3 {
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.education-card span {
+    display: inline-block;
+    margin-top: 15px;
+    color: #2563eb;
+    font-weight: 600;
+}

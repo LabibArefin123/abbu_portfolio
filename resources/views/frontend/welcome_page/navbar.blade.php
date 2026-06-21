@@ -133,7 +133,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#about" class="nav-link custom-link">
+                    <a href="{{ route('about') }}" class="nav-link custom-link">
                         About
                     </a>
                 </li>
@@ -141,6 +141,12 @@
                 <li class="nav-item">
                     <a href="#career" class="nav-link custom-link">
                         Career
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('experience') }}" class="nav-link custom-link">
+                        Experience
                     </a>
                 </li>
 

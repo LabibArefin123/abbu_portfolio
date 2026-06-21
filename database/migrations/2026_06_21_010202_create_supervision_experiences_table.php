@@ -13,13 +13,19 @@ return new class extends Migration
     {
         Schema::create('supervision_experiences', function (Blueprint $table) {
             $table->id();
+
             $table->string('position');
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
-            $table->string('organization')->nullable();
-            $table->string('description')->nullable();
-            $table->longText('bridges')->nullable();
+
+            $table->string('duration');
+
+            $table->string('location')->nullable();
+
+            $table->longText('description');
+
             $table->longText('responsibilities')->nullable();
+
+            $table->integer('sort_order')->default(0);
+
             $table->timestamps();
         });
     }

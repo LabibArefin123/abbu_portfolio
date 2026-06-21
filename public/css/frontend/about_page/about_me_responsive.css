@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+    .about-me-hero h1 {
+        font-size: 34px;
+    }
+
+    .info-row {
+        flex-direction: column;
+    }
+
+    .info-row span {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card,
+    .affiliation-card {
+        padding: 20px;
+    }
+}

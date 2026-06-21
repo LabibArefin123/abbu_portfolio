@@ -16,6 +16,11 @@ class WelcomePageController extends Controller
         return view('frontend.welcome');
     }
 
+    public function about()
+    {
+        return view('frontend.about_page.about');
+    }
+
     public function training()
     {
         $localTrainings =
@@ -33,11 +38,15 @@ class WelcomePageController extends Controller
         );
     }
 
-    public function experience_g()
+    public function experience()
     {
-        $experience = SupervisionExperience::latest()->first();
+        $experiences = SupervisionExperience::orderBy('sort_order')
+            ->get();
 
-        return view('frontend.cv.design_supervision', compact('experience'));
+        return view(
+            'frontend.experience_page.experience',
+            compact('experiences')
+        );
     }
 
     

@@ -1,0 +1,26 @@
+.experience-card{
+    background:#fff;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.experience-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.experience-header h3{
+    color:#0f172a;
+    font-weight:700;
+}
+
+.experience-header span{
+    background:#2563eb;
+    color:#fff;
+    padding:8px 15px;
+    border-radius:30px;
+}

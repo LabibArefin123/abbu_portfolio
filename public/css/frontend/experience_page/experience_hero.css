@@ -1,0 +1,15 @@
+.experience-hero{
+    padding:120px 0;
+    text-align:center;
+    background:#0f172a;
+    color:#fff;
+}
+
+.experience-hero h1{
+    font-size:3rem;
+    font-weight:700;
+}
+
+.experience-hero p{
+    font-size:1.2rem;
+}

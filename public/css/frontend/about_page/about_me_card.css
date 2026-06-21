@@ -1,0 +1,26 @@
+.about-card,
+.affiliation-card {
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.address-box {
+    margin-bottom: 35px;
+}
+
+.address-box h4 {
+    color: #0f172a;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.affiliation-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.affiliation-card li {
+    margin-bottom: 12px;
+}

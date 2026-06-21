@@ -54,6 +54,23 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/image_part/image_modal_content.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/image_part/image_modal_close.css') }}">
 
+    {{-- EXPERIENCE PAGE --}}
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_hero.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_cards.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_timeline.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_responsive.css') }}">
+
+    {{-- TRAINING PAGE --}}
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_hero.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_education.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_responsive.css') }}">
+
+    {{-- TRAINING PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_cards.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_country.css') }}">

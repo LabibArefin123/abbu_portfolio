@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class SupervisionExperience extends Model
 {
     protected $fillable = [
+
         'position',
-        'start_date',
-        'end_date',
-        'organization',
-        'bridges',
-        'responsibilities'
+        'duration',
+        'location',
+        'description',
+        'responsibilities',
+        'sort_order'
+
     ];
 }

@@ -1,0 +1,18 @@
+.experience-body{
+    line-height:1.9;
+    color:#475569;
+}
+
+.experience-responsibility{
+    margin-top:20px;
+    padding:20px;
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+}
+
+.description-responsibility{
+    margin-top:20px;
+    padding:20px;
+    background:#eff6ff;
+    border-left:5px solid #82eea8;
+}

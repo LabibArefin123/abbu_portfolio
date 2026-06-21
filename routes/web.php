@@ -26,7 +26,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
+Route::get('/about-us', [WelcomePageController::class, 'about'])->name('about');
 Route::get('/training', [WelcomePageController::class, 'training'])->name('training');
+Route::get('/experiences', [WelcomePageController::class, 'experience'])->name('experience');
 Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
 
 Route::get('/user_profile', function () {

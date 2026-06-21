@@ -1,0 +1,22 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f8fafc;
+    color: #334155;
+    line-height: 1.8;
+}
+
+.about-me-section {
+    padding: 20px 0;
+}
+
+.bg-light {
+    background: #f1f5f9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 50px;
+}
