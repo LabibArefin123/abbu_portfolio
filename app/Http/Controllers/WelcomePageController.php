@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\Contact;
+use App\Models\Career;
 use App\Models\Training;
 use App\Models\SupervisionExperience;
 use App\Models\SystemProblem;
@@ -20,6 +21,16 @@ class WelcomePageController extends Controller
     public function about()
     {
         return view('frontend.about_page.about');
+    }
+
+    public function career()
+    {
+        $careers = Career::orderBy('sort_order')->get();
+
+        return view(
+            'frontend.career_page.career',
+            compact('careers')
+        );
     }
 
     public function training()

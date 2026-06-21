@@ -1,0 +1,10 @@
+.timeline-item{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.timeline-item.show{
+    opacity:1;
+    transform:translateY(0);
+}

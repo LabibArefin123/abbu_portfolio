@@ -76,30 +76,6 @@
                                     {{ $slide['content'] }}
                                 </p>
 
-                                <div class="portfolio-stats">
-
-                                    <div class="stat-box">
-                                        <h3>43+</h3>
-                                        <span>Years Experience</span>
-                                    </div>
-
-                                    <div class="stat-box">
-                                        <h3>100+</h3>
-                                        <span>Projects</span>
-                                    </div>
-
-                                    <div class="stat-box">
-                                        <h3>BUET</h3>
-                                        <span>Civil Engineer</span>
-                                    </div>
-
-                                    <div class="stat-box">
-                                        <h3>LGED</h3>
-                                        <span>Leadership</span>
-                                    </div>
-
-                                </div>
-
                             </div>
 
                         </div>

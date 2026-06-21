@@ -12,7 +12,7 @@
         @hasSection('title')
             @yield('title')
         @else
-            {{ config('app.name', 'Dr. Fazlul Haque Colorectal Hospital Limited (DFCH)') }}
+            {{ config('app.name', 'Md. Anwar Hossain') }}
         @endif
     </title>
 
@@ -71,13 +71,21 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_card.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_responsive.css') }}">
 
+    {{-- CAREER PAGE --}}
+    <link rel="stylesheet" href="{{ asset('css/frontend/career_page/career_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/career_page/career_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/career_page/career_card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/career_page/career_timeline.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/career_page/career_animation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/career_page/career_responsive.css') }}">
+
     {{-- TRAINING PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_cards.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_country.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_effects.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_responsive.css') }}">
-    
+
     {{-- CONTACT PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_alert.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_base.css') }}">
@@ -148,6 +156,9 @@
 
     {{-- Experience Filter --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_filter.js') }}"></script> {{-- Experience Filter JS --}}
+
+    {{-- Career Timeline --}}
+    <script src="{{ asset('js/custom_frontend/career_page/career_journey.js') }}"></script> {{-- Experience Filter JS --}}
 
     {{-- NAVIGATION SECTION --}}
     <script src="{{ asset('js/custom_frontend/navigation/welcome_navigation.js') }}"></script> {{-- Welcome Navigation JS --}}

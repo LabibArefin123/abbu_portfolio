@@ -1,0 +1,11 @@
+@media(max-width:768px){
+
+    .timeline::before{
+        left:12px;
+    }
+
+    .timeline-item{
+        padding-left:50px;
+    }
+
+}

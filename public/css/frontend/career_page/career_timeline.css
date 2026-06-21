@@ -1,0 +1,15 @@
+.timeline{
+    position:relative;
+    max-width:1300px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:20px;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:#0f172a;
+}

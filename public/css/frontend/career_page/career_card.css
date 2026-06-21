@@ -1,0 +1,32 @@
+.timeline-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 50px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #2563eb;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content h4 {
+    margin-top: 10px;
+    color: #0f172a;
+}
+
+.career-duration {
+    color: #2563eb;
+    font-weight: 700;
+}

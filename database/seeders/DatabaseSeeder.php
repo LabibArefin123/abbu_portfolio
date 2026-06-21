@@ -27,8 +27,9 @@ class DatabaseSeeder extends Seeder
             // ProfessionalExperienceDSeeder::class,
             // ProfessionalExperienceESeeder::class,
             // ProfessionalExperienceFSeeder::class,
-            ProfessionalExperienceGSeeder::class,
-            ProfessionalExperienceGResponsibilitiesSeeder::class,
+            // ProfessionalExperienceGSeeder::class,
+            // ProfessionalExperienceGResponsibilitiesSeeder::class,
+            CareerSeeder::class,
             // UserSeeder::class,
         ]);
     }
