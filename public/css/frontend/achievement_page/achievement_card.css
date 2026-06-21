@@ -1,0 +1,18 @@
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-6px);
+}

@@ -1,0 +1,11 @@
+.achievement-header h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #0f172a;
+}
+
+.achievement-header p {
+    max-width: 700px;
+    margin: auto;
+    color: #64748b;
+}

@@ -1,0 +1,14 @@
+.year-badge{
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    background:#2563eb;
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-weight:700;
+}

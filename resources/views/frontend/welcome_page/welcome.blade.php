@@ -18,8 +18,6 @@
 
     @include('frontend.welcome_page.training')
 
-    @include('frontend.welcome_page.stat')
-
     @include('frontend.welcome_page.footer')
 
 @endsection

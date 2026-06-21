@@ -1,0 +1,10 @@
+.achievement-wrapper{
+    max-width:1400px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.achievement-header{
+    text-align:center;
+    margin-bottom:50px;
+}

@@ -86,6 +86,15 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_effects.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_responsive.css') }}">
 
+    {{-- ACHIEVEMENT PAGE --}}
+    <link rel="stylesheet" href="{{ asset('css/frontend/achievement_page/achievement_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/achievement_page/achievement_header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/achievement_page/achievement_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/achievement_page/achievement_card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/achievement_page/achievement_content.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/achievement_page/achievement_badge.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/achievement_page/achievement_responsive.css') }}">
+
     {{-- CONTACT PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_alert.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_base.css') }}">

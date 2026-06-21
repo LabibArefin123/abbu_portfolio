@@ -152,7 +152,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#achievements" class="nav-link custom-link">
+                    <a href="{{ route('achievement') }}" class="nav-link custom-link">
                         Achievements
                     </a>
                 </li>

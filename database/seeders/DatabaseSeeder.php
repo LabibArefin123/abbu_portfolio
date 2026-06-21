@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // PermissionSeeder::class,
             // TrainingSeeder::class,
+            // CareerSeeder::class,
+            AchievementSeeder::class,
             // ProfessionalExperienceASeeder::class,
             // ProfessionalExperienceBSeeder::class,
             // ProfessionalExperienceCSeeder::class,
@@ -29,7 +31,6 @@ class DatabaseSeeder extends Seeder
             // ProfessionalExperienceFSeeder::class,
             // ProfessionalExperienceGSeeder::class,
             // ProfessionalExperienceGResponsibilitiesSeeder::class,
-            CareerSeeder::class,
             // UserSeeder::class,
         ]);
     }

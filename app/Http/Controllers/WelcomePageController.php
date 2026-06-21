@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Models\Contact;
 use App\Models\Career;
 use App\Models\Training;
+use App\Models\Achievement;
 use App\Models\SupervisionExperience;
 use App\Models\SystemProblem;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class WelcomePageController extends Controller
 {
     public function index()
     {
-        return view('frontend.welcome');
+        return view('frontend.welcome_page.welcome');
     }
 
     public function about()
@@ -92,6 +93,16 @@ class WelcomePageController extends Controller
         $experiences = SupervisionExperience::orderBy('sort_order')->get();
 
         return view('frontend.experience_page.experience', compact('experiences'));
+    }
+
+    public function achievement()
+    {
+        $achievements = Achievement::orderBy('sort_order')->get();
+
+        return view(
+            'frontend.achievement_page.achievement',
+            compact('achievements')
+        );
     }
 
     public function contact_index()
