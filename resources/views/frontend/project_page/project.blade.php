@@ -57,7 +57,7 @@
 
     </div>
 
-    <section class="project-section">
+    <section class="project-section py-5" >
 
         <div class="container">
 

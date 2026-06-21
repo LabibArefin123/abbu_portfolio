@@ -16,15 +16,6 @@ class ProjectASeeder extends Seeder
         $projects = [
 
             [
-                'project_name' => 'Bhola Khal Bridge',
-                'project_type' => 'Bridge',
-                'location' => 'Bhola',
-                'position' => 'Assistant Engineer',
-                'project_year' => 1988,
-                'description' => 'Supervised planning, construction and implementation of Bhola Khal Bridge under local infrastructure development activities.'
-            ],
-
-            [
                 'project_name' => 'Purlodhi Bridge',
                 'project_type' => 'Bridge',
                 'location' => 'Feni',
