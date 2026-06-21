@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
+use App\Models\Contact;
 use App\Models\Training;
 use App\Models\SupervisionExperience;
 use App\Models\SystemProblem;
@@ -38,18 +39,67 @@ class WelcomePageController extends Controller
         );
     }
 
-    public function experience()
+    public function experience(Request $request)
     {
-        $experiences = SupervisionExperience::orderBy('sort_order')
-            ->get();
+        if ($request->ajax()) {
 
-        return view(
-            'frontend.experience_page.experience',
-            compact('experiences')
-        );
+            $query = SupervisionExperience::query();
+
+            // keyword search
+            if ($request->search) {
+                $query->where(function ($q) use ($request) {
+                    $q->where('position', 'like', "%{$request->search}%")
+                        ->orWhere('description', 'like', "%{$request->search}%")
+                        ->orWhere('location', 'like', "%{$request->search}%");
+                });
+            }
+
+            // date filter (duration format: dd-mm-yyyy to dd-mm-yyyy)
+            if ($request->from_date || $request->to_date) {
+
+                $query->where(function ($q) use ($request) {
+
+                    if ($request->from_date) {
+                        $q->whereRaw("STR_TO_DATE(SUBSTRING_INDEX(duration,' to ',1),'%d-%m-%Y') >= STR_TO_DATE(?,'%Y-%m-%d')", [
+                            $request->from_date
+                        ]);
+                    }
+
+                    if ($request->to_date) {
+                        $q->whereRaw("STR_TO_DATE(SUBSTRING_INDEX(duration,' to ',-1),'%d-%m-%Y') <= STR_TO_DATE(?,'%Y-%m-%d')", [
+                            $request->to_date
+                        ]);
+                    }
+                });
+            }
+
+            return response()->json([
+                'data' => $query->orderBy('sort_order')->get()
+            ]);
+        }
+
+        $experiences = SupervisionExperience::orderBy('sort_order')->get();
+
+        return view('frontend.experience_page.experience', compact('experiences'));
     }
 
-    
+    public function contact_index()
+    {
+        return view('frontend.contact_page.contact');
+    }
+
+    public function contact_store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'message' => 'required|string',
+        ]);
+
+        Contact::create($request->all());
+
+        return redirect()->back()->with('success', 'Message sent successfully!');
+    }
 
     public function system_problem_store(Request $request)
     {

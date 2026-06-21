@@ -1,16 +1,23 @@
-.experience-card{
-    background:#fff;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+.experience-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+   
+    transition: 0.3s;
 }
 
-.experience-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
+.experience-card:hover {
+    transform: translateY(-3px);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .experience-header h3{

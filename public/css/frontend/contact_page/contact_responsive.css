@@ -1,0 +1,10 @@
+.contact-container {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}

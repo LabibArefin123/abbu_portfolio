@@ -22,6 +22,18 @@
 
     </section>
 
+
+    <div class="experience-filter-box">
+
+        <input type="text" id="searchInput" placeholder="Search position / project..." />
+
+        <input type="date" id="fromDate" />
+
+        <input type="date" id="toDate" />
+
+        <button id="resetFilter">Reset</button>
+
+    </div>
     <section class="experience-section">
 
         <div class="container">

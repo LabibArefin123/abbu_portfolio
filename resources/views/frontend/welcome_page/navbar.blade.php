@@ -96,11 +96,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="#achievements">
-                        Achievements
-                    </a>
-                </li>
 
                 <li>
                     <a href="#training">
@@ -169,7 +164,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link custom-link">
+                    <a href="{{ route('contact') }}" class="nav-link custom-link">
                         Contact
                     </a>
                 </li>
@@ -183,7 +178,7 @@
     ========================================== --}}
         <div class="d-flex align-items-center">
 
-            <a href="#contact" class="btn login-btn">
+            <a href="{{ route('contact') }}" class="btn login-btn">
 
                 Contact Me
 

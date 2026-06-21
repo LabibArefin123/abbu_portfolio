@@ -1,0 +1,16 @@
+.contact-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+.contact-container {
+    display: flex;
+    gap: 25px;
+}

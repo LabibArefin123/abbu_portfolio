@@ -29,6 +29,8 @@ Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
 Route::get('/about-us', [WelcomePageController::class, 'about'])->name('about');
 Route::get('/training', [WelcomePageController::class, 'training'])->name('training');
 Route::get('/experiences', [WelcomePageController::class, 'experience'])->name('experience');
+Route::get('/contact', [WelcomePageController::class, 'contact_index'])->name('contact');
+Route::post('/contact', [WelcomePageController::class, 'contact_store'])->name('contact.store');
 Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
 
 Route::get('/user_profile', function () {

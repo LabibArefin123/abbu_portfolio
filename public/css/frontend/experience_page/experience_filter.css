@@ -1,0 +1,28 @@
+.experience-filter-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.experience-filter-box input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.experience-filter-box input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+.experience-filter-box button {
+    padding: 10px 16px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

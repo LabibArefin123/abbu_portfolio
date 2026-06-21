@@ -60,6 +60,7 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_hero.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_cards.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_timeline.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_filter.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/experience_page/experience_responsive.css') }}">
 
     {{-- TRAINING PAGE --}}
@@ -76,6 +77,15 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_country.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_effects.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_responsive.css') }}">
+    
+    {{-- CONTACT PAGE --}}
+    <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_alert.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_info.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_map.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/contact_page/contact_responsive.css') }}">
 
     {{-- LOGIN PAGE SECTION --}}
     <link rel="stylesheet" href="{{ asset('css/backend/login_page/login_base.css') }}">
@@ -135,6 +145,9 @@
     </script>
     {{-- End of SweetAlert2 notifications --}}
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
+
+    {{-- Experience Filter --}}
+    <script src="{{ asset('js/custom_frontend/experience_page/experience_filter.js') }}"></script> {{-- Experience Filter JS --}}
 
     {{-- NAVIGATION SECTION --}}
     <script src="{{ asset('js/custom_frontend/navigation/welcome_navigation.js') }}"></script> {{-- Welcome Navigation JS --}}

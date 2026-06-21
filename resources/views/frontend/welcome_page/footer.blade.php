@@ -63,7 +63,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('welcome') }}" class="text-white text-decoration-none">
+                        <a href="{{ route('about') }}" class="text-white text-decoration-none">
                             About
                         </a>
                     </li>
@@ -75,13 +75,19 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('welcome') }}" class="text-white text-decoration-none">
+                        <a href="{{ route('experience') }}" class="text-white text-decoration-none">
+                            Experience
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('training') }}" class="text-white text-decoration-none">
                             Training
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{ route('welcome') }}" class="text-white text-decoration-none">
+                        <a href="{{ route('contact') }}" class="text-white text-decoration-none">
                             Contact
                         </a>
                     </li>
@@ -127,5 +133,3 @@
         }
     });
 </script>
-
-</footer>
