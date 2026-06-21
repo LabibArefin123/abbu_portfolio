@@ -412,71 +412,7 @@ return [
             ],
         ],
 
-        [
-            'text'    => 'Patient Management',
-            'icon'    => 'fas fa-user-injured',
-            'submenu' => [
-
-                [
-                    'text'  => 'Patient List',
-                    'route' => 'patients.index',
-                    'can'   => 'patients.index',
-                    'icon'  => 'fas fa-list',
-                ],
-
-                [
-                    'text'  => 'Add New Patient',
-                    // 'route' => 'patients.create',
-                    // 'can'   => 'patients.create',
-                    'icon'  => 'fas fa-user-plus',
-                ],
-
-                [
-                    'text'  => 'Recommended Patients',
-                    'route' => 'patients.recommend',
-                    'can'   => 'patients.recommend',
-                    'icon'  => 'fas fa-list',
-                ],
-
-                [
-                    'text'  => 'Patient Documents',
-                    // 'route' => 'patient-documents.index',
-                    // 'can'   => 'patient-documents.index',
-                    'icon'  => 'fas fa-file-medical',
-                ],
-
-            ],
-        ],
-        [
-            'text' => 'Report Management',
-            'icon' => 'fas fa-file-alt',
-            'submenu' => [
-                [
-                    'text' => 'Daily Patient Report',
-                    'route' => 'report.daily',
-                    'can' => 'report.daily',
-                    'icon' => 'fas fa-calendar-day',
-                ],
-                [
-                    'text' => 'Weekly Patient Report',
-                    'route' => 'report.weekly',
-                    'can' => 'report.weekly',
-                    'icon' => 'fas fa-calendar-day',
-                ],
-                [
-                    'text' => 'Monthly Patient Report',
-                    'route' => 'report.monthly',
-                    'can' => 'report.monthly',
-                    'icon' => 'fas fa-calendar-day',
-                ],
-                [
-                    'text' => 'Yearly Patient Report',
-                    'route' => 'report.yearly',
-                    'can' => 'report.yearly',
-                    'icon' => 'fas fa-calendar-day',
-                ],
-            ],
-        ],
+      
         [
             'text' => 'Setting Management',
             'icon' => 'fas fa-cogs',
