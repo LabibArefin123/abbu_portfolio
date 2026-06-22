@@ -29,18 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
+                updateProjectCounts(res.data);
+
                 if (res.data.length === 0) {
                     container.innerHTML = `
 
-                        <div class="col-12 text-center">
+            <div class="col-12 text-center">
 
-                            <h4>
-                                No Project Found
-                            </h4>
+                <h4>
+                    No Project Found
+                </h4>
 
-                        </div>
+            </div>
 
-                    `;
+        `;
 
                     return;
                 }
