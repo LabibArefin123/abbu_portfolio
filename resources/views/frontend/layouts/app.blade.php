@@ -32,6 +32,8 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about_image.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about_image_info.css') }}">
 
     {{-- BACK TO TOP SECTION --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/back_to_top/bot_layout.css') }}">
@@ -176,17 +178,19 @@
     {{-- End of SweetAlert2 notifications --}}
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
 
+    {{-- About Image Animation + Loop --}}
+    <script src="{{ asset('js/custom_frontend/welcome_page/about_section/about_image_animation.js') }}"></script>
     {{-- =========================
      Career Page Scripts START
    ========================= --}}
 
-    {{-- Click highlight + scroll-to-card functionality (suggestion click) --}}
+    {{-- Career Animation JS --}}
     <script src="{{ asset('js/custom_frontend/career_page/career_journey.js') }}"></script>
 
     {{-- =========================
       Career Page Scripts END
    ========================= --}}
-   
+
     {{-- =========================
      Experience Page Scripts START
    ========================= --}}

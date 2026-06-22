@@ -3,11 +3,79 @@
 
         <div class="row align-items-center">
 
-            <div class="col-lg-4 text-center">
-                <img src="{{ asset('frontend/images/anwar.jpg') }}" class="img-fluid rounded shadow-lg"
-                    alt="Engr. Md. Anwar Hossain">
-            </div>
+            <div class="col-lg-4">
 
+                <div class="about-image-stack">
+
+                    <div class="about-image image-main active">
+
+                        <div class="image-info-btn">
+
+                            <i class="fas fa-circle-info"></i>
+
+                        </div>
+
+                        <div class="image-view-btn">
+
+                            <i class="fas fa-expand"></i>
+
+                            <span>View Image</span>
+
+                        </div>
+
+                        <img class="magnify-img"
+                            src="{{ asset('uploads/images/welcome_page/about_section/abbu_1.jpg') }}"
+                            alt="Anwar Hossain">
+
+                    </div>
+
+                    <div class="about-image image-top">
+
+                        <div class="image-info-btn">
+
+                            <i class="fas fa-circle-info"></i>
+
+                        </div>
+
+                        <div class="image-view-btn">
+
+                            <i class="fas fa-expand"></i>
+
+                            <span>View Image</span>
+
+                        </div>
+
+                        <img class="magnify-img"
+                            src="{{ asset('uploads/images/welcome_page/about_section/abbu_2.jpg') }}"
+                            alt="Anwar Hossain">
+
+                    </div>
+
+                    <div class="about-image image-bottom">
+
+                        <div class="image-info-btn">
+
+                            <i class="fas fa-circle-info"></i>
+
+                        </div>
+
+                        <div class="image-view-btn">
+
+                            <i class="fas fa-expand"></i>
+
+                            <span>View Image</span>
+
+                        </div>
+
+                        <img class="magnify-img"
+                            src="{{ asset('uploads/images/welcome_page/about_section/abbu_3.jpg') }}"
+                            alt="Anwar Hossain">
+
+                    </div>
+
+                </div>
+
+            </div>
             <div class="col-lg-8">
 
                 <span class="badge bg-primary mb-3">
@@ -40,7 +108,7 @@
 
                     <div class="col-md-3">
                         <div class="counter-box">
-                            <h3>100+</h3>
+                            <h3>73+</h3>
                             <p>Bridge Projects</p>
                         </div>
                     </div>
