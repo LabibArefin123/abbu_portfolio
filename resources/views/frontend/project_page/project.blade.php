@@ -23,16 +23,23 @@
 
             <div class="project-filter-header">
 
+                <a href="{{ route('welcome') }}" class="back-home-btn">
+
+                    <i class="fas fa-house"></i>
+
+                    Back To Home
+
+                </a>
+
                 <button id="resetFilter" class="filter-reset-btn">
 
                     <i class="fas fa-rotate-right"></i>
 
-                    RESET
+                    Reset
 
                 </button>
 
             </div>
-
             <div class="project-filter-box">
 
                 {{-- Search --}}

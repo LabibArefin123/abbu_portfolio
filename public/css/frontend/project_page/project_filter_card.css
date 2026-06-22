@@ -1,5 +1,4 @@
 .project-filter-card {
-
     position: relative;
 
     background: #fff;
@@ -10,16 +9,17 @@
 
     margin: 40px auto;
 
-    box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 
     border: 1px solid #e2e8f0;
 }
 
 .project-filter-header {
-
     display: flex;
 
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    align-items: center;
 
     margin-bottom: 20px;
 }

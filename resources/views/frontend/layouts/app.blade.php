@@ -72,6 +72,7 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_cards.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_card.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_button.css') }}">
 
     {{-- TRAINING PAGE --}}
