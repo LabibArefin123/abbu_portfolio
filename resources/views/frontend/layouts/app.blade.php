@@ -70,7 +70,9 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_search.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_hero.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_cards.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_button.css') }}">
 
     {{-- TRAINING PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_base.css') }}">

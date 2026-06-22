@@ -20,12 +20,22 @@
     <div class="container">
 
         <div class="project-filter-card">
-            <button id="resetFilter" class="filter-reset-btn">
-                <i class="fas fa-rotate-right"></i>
-            </button>
+
+            <div class="project-filter-header">
+
+                <button id="resetFilter" class="filter-reset-btn">
+
+                    <i class="fas fa-rotate-right"></i>
+
+                    RESET
+
+                </button>
+
+            </div>
 
             <div class="project-filter-box">
 
+                {{-- Search --}}
                 <div>
                     <label class="filter-label">
                         Search Project
@@ -34,6 +44,7 @@
                     <input type="text" id="searchInput" placeholder="Search project...">
                 </div>
 
+                {{-- Location --}}
                 <div>
                     <label class="filter-label">
                         Project Location
@@ -54,6 +65,7 @@
                     </select>
                 </div>
 
+                {{-- Type --}}
                 <div>
                     <label class="filter-label">
                         Project Type
@@ -74,6 +86,7 @@
                     </select>
                 </div>
 
+                {{-- Position --}}
                 <div>
                     <label class="filter-label">
                         Position
@@ -94,6 +107,7 @@
                     </select>
                 </div>
 
+                {{-- Year --}}
                 <div>
                     <label class="filter-label">
                         Year
@@ -113,11 +127,12 @@
 
                     </select>
                 </div>
+
             </div>
 
         </div>
-    </div>
 
+    </div>
     <section class="project-section py-5">
 
         <div class="container">
