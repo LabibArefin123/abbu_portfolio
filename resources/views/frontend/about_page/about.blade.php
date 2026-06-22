@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'About Engr. Md. Anwar Hossain')
+@section('title', 'About Me - Engr. Md. Anwar Hossain')
 
 @section('content')
 

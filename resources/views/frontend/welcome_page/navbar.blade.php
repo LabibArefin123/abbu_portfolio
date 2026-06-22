@@ -75,32 +75,32 @@
                 </li>
 
                 <li>
-                    <a href="#about">
+                    <a href="{{ route('about') }}">
                         About
                     </a>
                 </li>
 
                 <li>
-                    <a href="#career">
+                    <a href="{{ route('career') }}">
                         Career Journey
                     </a>
                 </li>
 
                 <li>
-                    <a href="#projects">
+                    <a href="{{ route('project') }}">
                         Major Projects
                     </a>
                 </li>
 
 
                 <li>
-                    <a href="#training">
+                    <a href="{{ route('training') }}">
                         Training
                     </a>
                 </li>
 
                 <li>
-                    <a href="#contact">
+                    <a href="{{ route('contact') }}">
                         Contact
                     </a>
                 </li>
@@ -207,34 +207,3 @@
     });
 </script>
 <!------end of welcome link js--->
-
-<!------start of facility js--->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dropdown = document.getElementById('facility_dropdown');
-        const toggleLink = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-menu');
-
-        // Toggle on click
-        toggleLink.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const isOpen = menu.classList.contains('show');
-            document.querySelectorAll('.dropdown-menu.show').forEach(el => {
-                el.classList.remove('show');
-            });
-
-            menu.classList.toggle('show', !isOpen);
-            toggleLink.setAttribute('aria-expanded', !isOpen);
-        });
-
-        // Close when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!dropdown.contains(e.target)) {
-                menu.classList.remove('show');
-                toggleLink.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-</script>
-<!------end of facility js--->
