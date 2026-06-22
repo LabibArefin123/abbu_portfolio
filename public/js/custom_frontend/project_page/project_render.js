@@ -3,11 +3,29 @@ function renderProject(item) {
 
     <div class="project-card">
 
-        <h3>${item.project_name}</h3>
+        <span class="project-type">
+            ${item.project_type ?? ""}
+        </span>
 
-        <p>${item.project_type}</p>
+        <h3>
+            ${item.project_name ?? ""}
+        </h3>
 
-        <p>${item.location ?? ""}</p>
+        <div class="project-meta">
+            📍 ${item.location ?? ""}
+        </div>
+
+        <div class="project-meta">
+            👷 ${item.position ?? ""}
+        </div>
+
+        <div class="project-meta">
+            📅 ${item.project_year ?? ""}
+        </div>
+
+        <div class="project-description">
+            ${item.description ?? ""}
+        </div>
 
     </div>
 

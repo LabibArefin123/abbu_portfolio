@@ -190,14 +190,34 @@ class WelcomePageController extends Controller
             });
     }
 
+
     public function project()
     {
-        $projects = Project::orderBy('sort_order')
-            ->get();
+        $projects = Project::orderBy('sort_order')->get();
+
+        $projectTypes = Project::whereNotNull('project_type')
+            ->where('project_type', '!=', '')
+            ->distinct()
+            ->pluck('project_type');
+
+        $positions = Project::whereNotNull('position')
+            ->where('position', '!=', '')
+            ->distinct()
+            ->pluck('position');
+
+        $years = Project::whereNotNull('project_year')
+            ->distinct()
+            ->orderByDesc('project_year')
+            ->pluck('project_year');
 
         return view(
             'frontend.project_page.project',
-            compact('projects')
+            compact(
+                'projects',
+                'projectTypes',
+                'positions',
+                'years'
+            )
         );
     }
 
@@ -215,18 +235,22 @@ class WelcomePageController extends Controller
 
                     $q->where('project_name', 'LIKE', "%{$search}%")
                         ->orWhere('location', 'LIKE', "%{$search}%")
-                        ->orWhere('river_name', 'LIKE', "%{$search}%")
                         ->orWhere('project_type', 'LIKE', "%{$search}%")
+                        ->orWhere('position', 'LIKE', "%{$search}%")
                         ->orWhere('description', 'LIKE', "%{$search}%");
                 });
             }
 
             if ($request->filled('project_type')) {
+                $query->where('project_type', $request->project_type);
+            }
 
-                $query->where(
-                    'project_type',
-                    $request->project_type
-                );
+            if ($request->filled('position')) {
+                $query->where('position', $request->position);
+            }
+
+            if ($request->filled('project_year')) {
+                $query->where('project_year', $request->project_year);
             }
 
             $projects = $query
@@ -240,13 +264,14 @@ class WelcomePageController extends Controller
             ]);
         } catch (\Exception $e) {
 
-            \Log::error($e);
+            \Log::error($e->getMessage());
 
             return response()->json([
                 'success' => false
             ]);
         }
     }
+
     public function achievement()
     {
         $achievements = Achievement::orderBy('sort_order')->get();

@@ -1,17 +1,28 @@
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:30px;
+
+    align-items:stretch;
 }
 
-@media (max-width: 992px) {
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr);
+.project-grid .project-card{
+    height:100%;
+}
+
+@media(max-width:1200px){
+
+    .project-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 
-@media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr;
+@media(max-width:768px){
+
+    .project-grid{
+        grid-template-columns:1fr;
     }
 }

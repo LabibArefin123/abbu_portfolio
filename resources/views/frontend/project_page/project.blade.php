@@ -23,41 +23,90 @@
 
             <div class="project-filter-box">
 
-                <input type="text" id="searchInput" placeholder="Search Project">
+                <div>
+                    <label class="filter-label">
+                        Search Project
+                    </label>
 
-                <select id="projectType">
+                    <input type="text" id="searchInput" placeholder="Search project...">
+                </div>
 
-                    <option value="">
-                        All Types
-                    </option>
+                <div>
+                    <label class="filter-label">
+                        Project Type
+                    </label>
 
-                    <option value="Bridge">
-                        Bridge
-                    </option>
+                    <select id="projectType">
 
-                    <option value="Flyover">
-                        Flyover
-                    </option>
+                        <option value="">
+                            All Types
+                        </option>
 
-                    <option value="Infrastructure">
-                        Infrastructure
-                    </option>
+                        @foreach ($projectTypes as $type)
+                            <option value="{{ $type }}">
+                                {{ $type }}
+                            </option>
+                        @endforeach
 
-                </select>
+                    </select>
+                </div>
 
-                <input type="number" id="projectYear" placeholder="Year">
+                <div>
+                    <label class="filter-label">
+                        Position
+                    </label>
 
-                <button id="resetFilter">
-                    Reset
-                </button>
+                    <select id="position">
+
+                        <option value="">
+                            All Positions
+                        </option>
+
+                        @foreach ($positions as $position)
+                            <option value="{{ $position }}">
+                                {{ $position }}
+                            </option>
+                        @endforeach
+
+                    </select>
+                </div>
+
+                <div>
+                    <label class="filter-label">
+                        Year
+                    </label>
+
+                    <select id="projectYear">
+
+                        <option value="">
+                            All Years
+                        </option>
+
+                        @foreach ($years as $year)
+                            <option value="{{ $year }}">
+                                {{ $year }}
+                            </option>
+                        @endforeach
+
+                    </select>
+                </div>
+
+                <div>
+                    <label class="filter-label">
+                        &nbsp;
+                    </label>
+
+                    <button id="resetFilter">
+                        Reset
+                    </button>
+                </div>
 
             </div>
 
         </div>
-
     </div>
 
-    <section class="project-section py-5" >
+    <section class="project-section py-5">
 
         <div class="container">
 

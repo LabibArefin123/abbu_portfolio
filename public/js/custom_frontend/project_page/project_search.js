@@ -1,20 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const search = document.querySelector("#searchInput");
+    const searchInput = document.querySelector("#searchInput");
+    const projectType = document.querySelector("#projectType");
+    const position = document.querySelector("#position");
+    const projectYear = document.querySelector("#projectYear");
+    const resetBtn = document.querySelector("#resetFilter");
 
     const container = document.querySelector("#projectContainer");
 
-    function loadData() {
+    function loadProjects() {
         const params = new URLSearchParams({
-            search: search.value,
+            search: searchInput.value,
+
+            project_type: projectType.value,
+
+            position: position.value,
+
+            project_year: projectYear.value,
         });
 
         fetch(`/projects/ajax?${params}`)
             .then((res) => res.json())
 
             .then((res) => {
+                if (!res.success) {
+                    return;
+                }
+
+                if (res.data.length === 0) {
+                    container.innerHTML = `
+
+                    <div class="col-12 text-center">
+
+                        <h4>
+                            No Project Found
+                        </h4>
+
+                    </div>
+
+                    `;
+
+                    return;
+                }
+
                 container.innerHTML = res.data.map(renderProject).join("");
             });
     }
 
-    search.addEventListener("input", loadData);
+    searchInput.addEventListener("keyup", loadProjects);
+
+    projectType.addEventListener("change", loadProjects);
+
+    position.addEventListener("change", loadProjects);
+
+    projectYear.addEventListener("change", loadProjects);
+
+    resetBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        projectType.value = "";
+        position.value = "";
+        projectYear.value = "";
+
+        loadProjects();
+    });
 });
