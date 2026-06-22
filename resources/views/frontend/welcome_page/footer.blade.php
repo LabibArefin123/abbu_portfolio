@@ -69,7 +69,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('welcome') }}" class="text-white text-decoration-none">
+                        <a href="{{ route('project') }}" class="text-white text-decoration-none">
                             Projects
                         </a>
                     </li>
@@ -77,6 +77,12 @@
                     <li>
                         <a href="{{ route('experience') }}" class="text-white text-decoration-none">
                             Experience
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('achievement') }}" class="text-white text-decoration-none">
+                            Achievement
                         </a>
                     </li>
 

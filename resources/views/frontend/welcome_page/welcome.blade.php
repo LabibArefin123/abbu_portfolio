@@ -12,8 +12,6 @@
 
     @include('frontend.welcome_page.career_journey')
 
-    @include('frontend.welcome_page.major_projects')
-
     @include('frontend.welcome_page.achievements')
 
     @include('frontend.welcome_page.training')
