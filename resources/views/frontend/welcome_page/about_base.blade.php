@@ -123,7 +123,7 @@
                     <div class="col-md-3">
                         <div class="counter-box">
                             <h3>LGED</h3>
-                            <p>Chief Engineer</p>
+                            <p>Former Additional Chief Engineer</p>
                         </div>
                     </div>
 

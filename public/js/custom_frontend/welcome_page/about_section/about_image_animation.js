@@ -31,15 +31,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     cards.forEach((card) => {
-        card.addEventListener("click", (e) => {
-            if (
-                e.target.closest(".image-view-btn") ||
-                e.target.closest(".image-info-btn") ||
-                e.target.classList.contains("magnify-img")
-            ) {
-                return;
-            }
+        const image = card.querySelector(".magnify-img");
 
+        const viewBtn = card.querySelector(".image-view-btn");
+
+        const infoBtn = card.querySelector(".image-info-btn");
+
+        // Open magnify modal
+        viewBtn?.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            image?.click();
+        });
+
+        // Open magnify modal
+        infoBtn?.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            image?.click();
+        });
+
+        // Bring image to front
+        card.addEventListener("click", () => {
             const index = cards.indexOf(card);
 
             if (index > 0) {

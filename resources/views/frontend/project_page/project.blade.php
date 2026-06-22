@@ -160,7 +160,7 @@
                 </div>
 
                 <div class="count-label">
-                    Bridge
+                    Bridge Projects
                 </div>
 
             </div>
@@ -172,7 +172,7 @@
                 </div>
 
                 <div class="count-label">
-                    Flyover
+                    Flyover Projects
                 </div>
 
             </div>
@@ -184,7 +184,7 @@
                 </div>
 
                 <div class="count-label">
-                    Infrastructure
+                    Infrastructure Projects
                 </div>
 
             </div>
@@ -192,7 +192,7 @@
         </div>
 
     </div>
-    
+
     <section class="project-section py-5">
 
         <div class="container">
