@@ -1,13 +1,10 @@
-.project-card{
 
+.project-card{
     background:#fff;
     border-radius:15px;
     padding:25px;
-
     height:100%;
-
     box-shadow:0 4px 15px rgba(0,0,0,.08);
-
     transition:.3s;
 }
 
