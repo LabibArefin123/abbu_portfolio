@@ -26,6 +26,12 @@
                         B.Sc. Engineering (Civil), BUET
                     </h3>
                     <div class="about-socials">
+                        <button class="about-social-btn cv-btn" data-bs-toggle="modal" data-bs-target="#cvModal">
+
+                            <i class="fas fa-file-alt"></i>
+                            CV
+
+                        </button>
 
                         <button class="about-social-btn email" data-bs-toggle="modal" data-bs-target="#emailModal">
 

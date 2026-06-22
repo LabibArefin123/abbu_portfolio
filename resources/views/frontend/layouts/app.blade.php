@@ -101,6 +101,10 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_section.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_cv_button.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_cv_modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_cv_icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_cv_actions.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_hero.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_socials.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_education.css') }}">
@@ -184,6 +188,7 @@
     @include('frontend.modal.custom_location')
     @include('frontend.modal.custom_phone')
     @include('frontend.modal.custom_land_phone')
+    @include('frontend.modal.about_page.custom_cv_modal')
     @include('frontend.modal.footer.phone')
     @include('frontend.modal.footer.land_phone')
     @include('frontend.modal.footer.email')
@@ -209,13 +214,21 @@
     <script src="{{ asset('js/custom_frontend/welcome_page/training_section/training_flag.js') }}"></script>
     <script src="{{ asset('js/custom_frontend/welcome_page/training_section/training_link.js') }}"></script>
     <script src="{{ asset('js/custom_frontend/welcome_page/training_section/training_ajax.js') }}"></script>
+
+    {{-- =========================
+     About Page Scripts START
+   ========================= --}}
+    {{-- About Button Animation JS --}}
+    <script src="{{ asset('js/custom_frontend/about_page/cv_button_animation.js') }}"></script>
+    {{-- =========================
+      About Page Scripts END
+   ========================= --}}
+
     {{-- =========================
      Career Page Scripts START
    ========================= --}}
-
     {{-- Career Animation JS --}}
     <script src="{{ asset('js/custom_frontend/career_page/career_journey.js') }}"></script>
-
     {{-- =========================
       Career Page Scripts END
    ========================= --}}

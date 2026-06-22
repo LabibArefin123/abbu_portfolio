@@ -1,0 +1,38 @@
+.cv-btn {
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+}
+
+/* bounce animation */
+.cv-btn.cv-pulse {
+    animation: cvBounce 1.2s ease;
+}
+
+/* glowing ring */
+.cv-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    border: 2px solid rgba(37, 99, 235, 0.6);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cv-btn.cv-pulse::after {
+    animation: cvRingPulse 1.2s ease-out;
+}
+
+@keyframes cvBounce {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.08); }
+    50% { transform: scale(0.98); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes cvRingPulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.8); opacity: 0; }
+}

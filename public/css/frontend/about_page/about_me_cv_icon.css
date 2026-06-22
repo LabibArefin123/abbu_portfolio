@@ -1,0 +1,15 @@
+.cv-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.cv-icon i {
+    font-size: 40px;
+    color: white;
+}
