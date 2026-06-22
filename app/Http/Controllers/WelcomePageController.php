@@ -39,10 +39,19 @@ class WelcomePageController extends Controller
     {
         $trainings = Training::latest()->get();
 
-        $locations = Training::select('location')
+        $localLocations = Training::where('type', 'Bangladesh')
             ->whereNotNull('location')
             ->distinct()
+            ->orderBy('location', 'asc')
             ->pluck('location');
+
+        $internationalLocations = Training::where('type', 'International')
+            ->whereNotNull('location')
+            ->distinct()
+            ->orderBy('location', 'asc')
+            ->pluck('location');
+
+        $locations = $localLocations->merge($internationalLocations);
 
         $years = Training::all()
             ->map(function ($item) {
@@ -68,6 +77,8 @@ class WelcomePageController extends Controller
                 'trainings',
                 'localTrainings',
                 'internationalTrainings',
+                'localLocations',
+                'internationalLocations',
                 'locations',
                 'years'
             )

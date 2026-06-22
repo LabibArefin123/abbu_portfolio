@@ -62,10 +62,29 @@
                 <div>
                     <label class="filter-label">Location</label>
                     <select id="trainingLocation">
+
                         <option value="">All Locations</option>
-                        @foreach ($locations as $location)
-                            <option value="{{ $location }}">{{ $location }}</option>
-                        @endforeach
+
+                        <optgroup label="Bangladesh">
+
+                            @foreach ($localLocations as $location)
+                                <option value="{{ $location }}">
+                                    {{ $location }}
+                                </option>
+                            @endforeach
+
+                        </optgroup>
+
+                        <optgroup label="International">
+
+                            @foreach ($internationalLocations as $location)
+                                <option value="{{ $location }}">
+                                    {{ $location }}
+                                </option>
+                            @endforeach
+
+                        </optgroup>
+
                     </select>
                 </div>
 
@@ -93,7 +112,7 @@
         </div>
 
     </div>
-    
+
     {{-- TRAINING RESULT WRAPPERS --}}
     <section class="training-section">
 
@@ -149,7 +168,7 @@
 
                 </div>
 
-            </div> 
+            </div>
 
         </div>
 
