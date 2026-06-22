@@ -200,6 +200,13 @@ class WelcomePageController extends Controller
             ->distinct()
             ->pluck('project_type');
 
+        $projectLocations = Project::selectRaw('location, COUNT(*) as total')
+            ->whereNotNull('location')
+            ->where('location', '!=', '')
+            ->groupBy('location')
+            ->orderBy('location', 'asc')
+            ->get();
+
         $positions = Project::whereNotNull('position')
             ->where('position', '!=', '')
             ->distinct()
@@ -215,6 +222,7 @@ class WelcomePageController extends Controller
             compact(
                 'projects',
                 'projectTypes',
+                'projectLocations',
                 'positions',
                 'years'
             )
@@ -252,7 +260,14 @@ class WelcomePageController extends Controller
             if ($request->filled('project_year')) {
                 $query->where('project_year', $request->project_year);
             }
+            
+            if ($request->filled('location')) {
 
+                $query->where(
+                    'location',
+                    $request->location
+                );
+            }
             $projects = $query
                 ->orderBy('sort_order')
                 ->get();

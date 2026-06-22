@@ -20,6 +20,9 @@
     <div class="container">
 
         <div class="project-filter-card">
+            <button id="resetFilter" class="filter-reset-btn">
+                <i class="fas fa-rotate-right"></i>
+            </button>
 
             <div class="project-filter-box">
 
@@ -29,6 +32,26 @@
                     </label>
 
                     <input type="text" id="searchInput" placeholder="Search project...">
+                </div>
+
+                <div>
+                    <label class="filter-label">
+                        Project Location
+                    </label>
+
+                    <select id="projectLocation">
+
+                        <option value="">
+                            All Locations
+                        </option>
+
+                        @foreach ($projectLocations as $loc)
+                            <option value="{{ $loc->location }}">
+                                {{ $loc->location }} ({{ $loc->total }})
+                            </option>
+                        @endforeach
+
+                    </select>
                 </div>
 
                 <div>
@@ -90,17 +113,6 @@
 
                     </select>
                 </div>
-
-                <div>
-                    <label class="filter-label">
-                        &nbsp;
-                    </label>
-
-                    <button id="resetFilter">
-                        Reset
-                    </button>
-                </div>
-
             </div>
 
         </div>

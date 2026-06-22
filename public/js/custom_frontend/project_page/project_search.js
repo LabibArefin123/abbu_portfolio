@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectType = document.querySelector("#projectType");
     const position = document.querySelector("#position");
     const projectYear = document.querySelector("#projectYear");
+    const projectLocation = document.querySelector("#projectLocation");
     const resetBtn = document.querySelector("#resetFilter");
 
     const container = document.querySelector("#projectContainer");
@@ -16,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
             position: position.value,
 
             project_year: projectYear.value,
+
+            location: projectLocation.value,
         });
 
         fetch(`/projects/ajax?${params}`)
@@ -29,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (res.data.length === 0) {
                     container.innerHTML = `
 
-                    <div class="col-12 text-center">
+                        <div class="col-12 text-center">
 
-                        <h4>
-                            No Project Found
-                        </h4>
+                            <h4>
+                                No Project Found
+                            </h4>
 
-                    </div>
+                        </div>
 
                     `;
 
@@ -54,11 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     projectYear.addEventListener("change", loadProjects);
 
+    projectLocation.addEventListener("change", loadProjects);
+
     resetBtn.addEventListener("click", () => {
         searchInput.value = "";
         projectType.value = "";
         position.value = "";
         projectYear.value = "";
+        projectLocation.value = "";
 
         loadProjects();
     });
