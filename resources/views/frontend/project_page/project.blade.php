@@ -1,5 +1,7 @@
 @extends('frontend.layouts.app')
 
+@section('title', 'My Projects')
+
 @section('content')
     @include('frontend.welcome_page.header')
     <section class="project-hero">
@@ -133,6 +135,56 @@
                         @endforeach
 
                     </select>
+                </div>
+
+            </div>
+        </div>
+        <div id="projectStats" class="project-count-wrapper">
+
+            <div class="project-count-card total-card">
+
+                <div class="count-number">
+                    {{ $projects->count() }}
+                </div>
+
+                <div class="count-label">
+                    Total Projects
+                </div>
+
+            </div>
+
+            <div class="project-count-card">
+
+                <div id="bridgeCount" class="count-number">
+                    {{ $projects->where('project_type', 'Bridge')->count() }}
+                </div>
+
+                <div class="count-label">
+                    Bridge
+                </div>
+
+            </div>
+
+            <div class="project-count-card">
+
+                <div id="flyoverCount" class="count-number">
+                    {{ $projects->where('project_type', 'Flyover')->count() }}
+                </div>
+
+                <div class="count-label">
+                    Flyover
+                </div>
+
+            </div>
+
+            <div class="project-count-card">
+
+                <div id="infraCount" class="count-number">
+                    {{ $projects->where('project_type', 'Infrastructure')->count() }}
+                </div>
+
+                <div class="count-label">
+                    Infrastructure
                 </div>
 
             </div>

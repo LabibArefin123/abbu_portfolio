@@ -74,6 +74,7 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_form.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_filter_button.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/project_page/project_count.css') }}">
 
     {{-- TRAINING PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_base.css') }}">
@@ -209,6 +210,9 @@
 
     {{-- Project Search, Filter & AJAX Handler --}}
     <script src="{{ asset('js/custom_frontend/project_page/project_search.js') }}"></script>
+
+    {{-- Project Count Handler --}}
+    <script src="{{ asset('js/custom_frontend/project_page/project_count.js') }}"></script>
 
     {{-- =========================
      End Project Page Scripts
