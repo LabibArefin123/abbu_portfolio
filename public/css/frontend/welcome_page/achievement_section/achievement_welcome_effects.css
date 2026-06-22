@@ -13,14 +13,12 @@
         0 20px 40px rgba(0,0,0,.25);
 }
 
-.achievement-welcome-card:hover
-.achievement-welcome-number {
+.achievement-welcome-card:hover h2 {
 
     color: #ffffff;
 }
 
-.achievement-welcome-card:hover
-.achievement-welcome-title {
+.achievement-welcome-card:hover p {
 
     color: #ffffff;
 }

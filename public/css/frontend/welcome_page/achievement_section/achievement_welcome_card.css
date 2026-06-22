@@ -1,0 +1,49 @@
+.achievement-welcome-card {
+    height: 100%;
+
+    min-height: 170px;
+
+    padding: 25px 15px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(12px);
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: all 0.4s ease;
+}
+
+.achievement-welcome-card h2 {
+    margin: 0 0 12px;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    line-height: 1;
+}
+
+.achievement-welcome-card p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.75);
+}

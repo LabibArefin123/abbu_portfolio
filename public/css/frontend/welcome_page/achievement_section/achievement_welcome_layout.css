@@ -1,19 +1,9 @@
-.achievement-welcome-row {
-
-    display: flex;
-
+.achievement-welcome-section .row {
     justify-content: center;
 
-    flex-wrap: wrap;
-
-    gap: 20px;
+    row-gap: 20px;
 }
 
-.achievement-welcome-column {
-
-    flex: 1;
-
-    min-width: 180px;
-
-    max-width: 220px;
+.achievement-welcome-section .col-md-2 {
+    margin-bottom: 20px;
 }

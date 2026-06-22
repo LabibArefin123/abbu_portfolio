@@ -4,7 +4,7 @@
 
         <div class="row text-center">
 
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-4 col-sm-6">
 
                 <div class="achievement-welcome-card">
                     <h2>43+</h2>
@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-4 col-sm-6">
 
                 <div class="achievement-welcome-card">
                     <h2>66+</h2>
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-4 col-sm-6">
 
                 <div class="achievement-welcome-card">
                     <h2>5+</h2>
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-4 col-sm-6">
 
                 <div class="achievement-welcome-card">
                     <h2>2+</h2>
@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-4 col-sm-6">
 
                 <div class="achievement-welcome-card">
                     <h2>10+</h2>

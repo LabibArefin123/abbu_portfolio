@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about_image_info.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_section.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_card.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_effects.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_responsive.css') }}">
 
