@@ -177,6 +177,17 @@
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
 
     {{-- =========================
+     Career Page Scripts START
+   ========================= --}}
+
+    {{-- Click highlight + scroll-to-card functionality (suggestion click) --}}
+    <script src="{{ asset('js/custom_frontend/career_page/career_journey.js') }}"></script>
+
+    {{-- =========================
+      Career Page Scripts END
+   ========================= --}}
+   
+    {{-- =========================
      Experience Page Scripts START
    ========================= --}}
     {{-- Helper functions (escape HTML, nl2br, highlight, word count) --}}

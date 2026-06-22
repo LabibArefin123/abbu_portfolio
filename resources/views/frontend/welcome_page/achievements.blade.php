@@ -10,12 +10,12 @@
             </div>
 
             <div class="col-md-3">
-                <h2>100+</h2>
+                <h2>66+</h2>
                 <p>Bridge Projects</p>
             </div>
 
             <div class="col-md-3">
-                <h2>20+</h2>
+                <h2>5+</h2>
                 <p>Major Infrastructure Works</p>
             </div>
 

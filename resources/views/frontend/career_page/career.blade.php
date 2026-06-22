@@ -19,7 +19,7 @@
         <div class="timeline">
 
             @foreach ($careers as $career)
-                <div class="timeline-item">
+                <div class="timeline-item ">
 
                     <div class="timeline-dot"></div>
 
