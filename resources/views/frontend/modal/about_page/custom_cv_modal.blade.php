@@ -37,7 +37,7 @@
 
                 <div class="cv-actions">
 
-                    <a href="{{ asset('uploads/cv/Md Anwar Hossain CV.docx') }}"
+                    <a href="{{ asset('uploads/cv/Md Anwar Hossain CV.pdf') }}"
                         target="_blank"
                         class="cv-action-btn view-cv">
 
@@ -46,13 +46,20 @@
 
                     </a>
 
+                    <a href="{{ asset('uploads/cv/Md Anwar Hossain CV.pdf') }}"
+                        download
+                        class="cv-action-btn download-cv">
+
+                        <i class="fas fa-download"></i>
+                        Download CV (in PDF)
+                    </a>
+
                     <a href="{{ asset('uploads/cv/Md Anwar Hossain CV.docx') }}"
                         download
                         class="cv-action-btn download-cv">
 
                         <i class="fas fa-download"></i>
-                        Download CV
-
+                        Download CV (in Word)
                     </a>
 
                 </div>

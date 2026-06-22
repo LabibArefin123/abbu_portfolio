@@ -1,3 +1,7 @@
+#cvModal .modal-dialog {
+    max-width: 750px;
+}
+
 .cv-modal {
     border: none;
     border-radius: 24px;
