@@ -1,26 +1,27 @@
-.about-card,
-.affiliation-card {
-    background: white;
-    border-radius: 12px;
-    padding: 35px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.address-box {
-    margin-bottom: 35px;
-}
-
-.address-box h4 {
+.stat-box {
+    background: #fff;
     color: #0f172a;
-    margin-bottom: 15px;
-    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+    padding: 25px;
 }
 
-.affiliation-card ul {
-    margin: 0;
-    padding-left: 20px;
+.stat-box h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 5px;
 }
 
-.affiliation-card li {
-    margin-bottom: 12px;
+.bio-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }

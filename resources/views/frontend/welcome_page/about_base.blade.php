@@ -109,7 +109,7 @@
                     <div class="col-md-3">
                         <div class="counter-box">
                             <h3>73+</h3>
-                            <p>Bridge Projects</p>
+                            <p>Total Projects</p>
                         </div>
                     </div>
 

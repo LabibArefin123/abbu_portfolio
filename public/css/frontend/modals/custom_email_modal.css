@@ -1,54 +1,85 @@
-/* ===============================
-   Email Modal – Professional Style
-================================= */
-
-#emailModal .modal-content {
-    border-radius: 18px;
+.email-modal {
     border: none;
-    padding: 10px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .15);
 }
 
-#emailModal .modal-header {
-    border-bottom: none;
-    text-align: center;
-    justify-content: center;
-    position: relative;
+.email-modal .modal-header {
+    padding: 25px 30px 10px;
 }
 
-#emailModal .modal-title {
+.email-modal .modal-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.email-modal .modal-body {
+    padding: 20px 30px 35px;
+}
+
+.email-address-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.email-address-box i {
+    color: #ea4335;
+    font-size: 20px;
+}
+
+.email-address-box span {
     font-weight: 600;
-    color: #003366;
-    font-size: 22px;
+    color: #0f172a;
 }
 
-#emailModal .modal-header .close,
-#emailModal .modal-header .btn-close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: #f2f5f9;
-    border-radius: 50%;
-    padding: 6px 10px;
+.email-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.email-option-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #0f172a;
+    color: white;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.email-option-btn:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.email-option-btn.gmail {
+    background: linear-gradient(
+        135deg,
+        #ea4335,
+        #c5221f
+    );
+}
+
+.email-option-btn.yahoo {
+    background: linear-gradient(
+        135deg,
+        #6001d2,
+        #4b00a8
+    );
+}
+
+.email-option-btn i {
     font-size: 18px;
-}
-
-#emailModal .modal-body p {
-    color: #666;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-
-#emailModal .btn-primary {
-    background: linear-gradient(135deg, #003366, #008080);
-    border: none;
-    border-radius: 30px;
-    padding: 13px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-#emailModal .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.3);
 }

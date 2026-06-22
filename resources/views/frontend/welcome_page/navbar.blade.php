@@ -26,7 +26,7 @@
                 </h5>
 
                 <small class="text-light">
-                    Additional Chief Engineer Retired, LGED
+                    Additional Chief Engineer (Retd.), LGED
                 </small>
 
             </div>

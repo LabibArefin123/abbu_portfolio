@@ -100,7 +100,9 @@
     {{-- TRAINING PAGE --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_section.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_hero.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_socials.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_education.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_card.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/about_page/about_me_responsive.css') }}">
@@ -178,6 +180,7 @@
         };
     </script>
 
+    @include('frontend.modal.custom_email')
     @include('frontend.modal.custom_location')
     @include('frontend.modal.custom_phone')
     @include('frontend.modal.custom_land_phone')
