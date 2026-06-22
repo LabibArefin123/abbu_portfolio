@@ -1,0 +1,14 @@
+.expertise-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: .35s;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(15,23,42,.04);
+}
+
+.expertise-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(15,23,42,.12);
+}

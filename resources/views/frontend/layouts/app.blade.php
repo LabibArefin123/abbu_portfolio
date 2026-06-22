@@ -31,10 +31,12 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
+
     {{-- ABOUT SECTION --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about_image.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/about_section/custom_about_image_info.css') }}">
+
     {{-- ACHIEVEMENT SECTION --}}
     <link rel="stylesheet"
         href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_section.css') }}">
@@ -46,6 +48,7 @@
         href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_effects.css') }}">
     <link rel="stylesheet"
         href="{{ asset('css/frontend/welcome_page/achievement_section/achievement_welcome_responsive.css') }}">
+
     {{-- TRAINING SECTION --}}
     <link rel="stylesheet"
         href="{{ asset('css/frontend/welcome_page/training_section/custom_training_section.css') }}">
@@ -53,6 +56,14 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/training_section/custom_training_flag.css') }}">
     <link rel="stylesheet"
         href="{{ asset('css/frontend/welcome_page/training_section/custom_training_responsive.css') }}">
+
+    {{-- EXPERTISE SECTION --}}
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/expertise_section/expertise_section.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/expertise_section/expertise_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/expertise_section/expertise_heading.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/expertise_section/expertise_card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/expertise_section/expertise_icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/welcome_page/expertise_section/expertise_responsive.css') }}">
 
     {{-- BACK TO TOP SECTION --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/back_to_top/bot_layout.css') }}">
