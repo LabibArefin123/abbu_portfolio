@@ -1,0 +1,25 @@
+@media (max-width: 991px) {
+    .training-title {
+        font-size: 2rem;
+    }
+
+    .country-flag {
+        width: 100px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .training-card {
+        padding: 25px 15px;
+    }
+
+    .training-title {
+        font-size: 1.7rem;
+    }
+
+    .country-flag {
+        width: 90px;
+        height: 60px;
+    }
+}
