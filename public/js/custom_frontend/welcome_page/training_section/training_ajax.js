@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const country = params.get("country");
 
-    const type = params.get("type");
-
     if (!country) {
         return;
     }
 
     const searchInput = document.getElementById("searchTraining");
 
-
     if (searchInput) {
         searchInput.value = country;
-    }
 
+        loadTrainingAjax({
+            search: country,
+        });
+    }
 });
