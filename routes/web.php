@@ -29,6 +29,7 @@ Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
 Route::get('/about-us', [WelcomePageController::class, 'about'])->name('about');
 Route::get('/career', [WelcomePageController::class, 'career'])->name('career');
 Route::get('/training', [WelcomePageController::class, 'training'])->name('training');
+Route::get('/training/ajax', [WelcomePageController::class, 'trainingAjax'])->name('training.ajax');
 Route::get('/experiences', [WelcomePageController::class, 'experience'])->name('experience');
 Route::get('/experiences/ajax', [WelcomePageController::class, 'experienceAjax'])->name('experience.ajax');
 Route::get('/projects', [WelcomePageController::class, 'project'])->name('project');

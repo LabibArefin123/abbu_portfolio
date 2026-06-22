@@ -42,6 +42,7 @@
                 </button>
 
             </div>
+            
             <div class="project-filter-box">
 
                 {{-- Search --}}
@@ -139,6 +140,7 @@
 
             </div>
         </div>
+
         <div id="projectStats" class="project-count-wrapper">
 
             <div class="project-count-card total-card">

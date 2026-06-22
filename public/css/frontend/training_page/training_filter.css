@@ -1,0 +1,75 @@
+.training-filter-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+
+    /* Gap from Hero Section */
+    margin-top: 40px;
+
+    /* Gap before Training Section */
+    margin-bottom: 60px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 10;
+}
+
+.training-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Bigger gap between header and filters */
+    margin-bottom: 35px;
+}
+
+.training-filter-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.filter-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+.training-filter-box input,
+.training-filter-box select {
+    width: 100%;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 12px;
+}
+
+.back-home-btn {
+    background: #0d6efd;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+}
+
+.filter-reset-btn {
+    border: none;
+
+    background: #dc3545;
+
+    color: white;
+
+    border-radius: 10px;
+
+    padding: 10px 18px;
+}

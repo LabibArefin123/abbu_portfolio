@@ -37,6 +37,25 @@ class WelcomePageController extends Controller
 
     public function training()
     {
+        $trainings = Training::latest()->get();
+
+        $locations = Training::select('location')
+            ->whereNotNull('location')
+            ->distinct()
+            ->pluck('location');
+
+        $years = Training::all()
+            ->map(function ($item) {
+                if ($item->duration) {
+                    preg_match('/\d{4}/', $item->duration, $matches);
+                    return $matches[0] ?? null;
+                }
+                return null;
+            })
+            ->filter()
+            ->unique()
+            ->values();
+
         $localTrainings =
             Training::where('type', 'Bangladesh')->get();
 
@@ -46,11 +65,50 @@ class WelcomePageController extends Controller
         return view(
             'frontend.training_page.training',
             compact(
+                'trainings',
                 'localTrainings',
-                'internationalTrainings'
+                'internationalTrainings',
+                'locations',
+                'years'
             )
         );
     }
+
+    public function trainingAjax(Request $request)
+    {
+        $query = Training::query();
+
+        // Search
+        if ($request->search) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+
+        // Type filter
+        if ($request->type) {
+            $query->where('type', $request->type);
+        }
+
+        // Location filter
+        if ($request->location) {
+            $query->where('location', 'like', '%' . $request->location . '%');
+        }
+
+        // Year filter (from duration)
+        if ($request->year) {
+            $query->where('duration', 'like', '%' . $request->year . '%');
+        }
+
+        $trainings = $query->latest()->get();
+
+        $internationalTrainings = $trainings->where('type', 'International');
+        $localTrainings = $trainings->where('type', 'Bangladesh');
+
+        return response()->json([
+            'html' => view('frontend.training_page.partials.training_cards', compact('trainings'))->render(),
+            'international' => view('frontend.training_page.partials.international_cards', compact('internationalTrainings'))->render(),
+        ]);
+    }
+
 
     public function experience()
     {
