@@ -1,13 +1,24 @@
 function loadTrainingAjax(filters = {}) {
-    $.ajax({
-        url: "/training/ajax",
+    const queryString = new URLSearchParams(filters).toString();
 
-        type: "GET",
+    fetch(`${window.trainingAjaxUrl}?${queryString}`)
+        .then((response) => response.json())
 
-        data: filters,
+        .then((response) => {
+            document.getElementById("trainingContainer").innerHTML =
+                response.html;
 
-        success: function (response) {
-            $("#trainingContainer").html(response);
-        },
-    });
+            document.getElementById("internationalContainer").innerHTML =
+                response.international;
+
+            updateTrainingCounts();
+
+            highlightTrainingSearch();
+
+            initializeTrainingCards();
+        })
+
+        .catch((error) => {
+            console.error("Training AJAX Error:", error);
+        });
 }

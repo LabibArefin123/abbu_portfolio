@@ -1,4 +1,4 @@
-@foreach($trainings->where('type','Bangladesh') as $training)
+@foreach($localTrainings as $training)
 
     <div class="col-lg-6 mb-4">
 

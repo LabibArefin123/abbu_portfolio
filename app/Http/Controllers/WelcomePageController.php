@@ -78,37 +78,64 @@ class WelcomePageController extends Controller
     {
         $query = Training::query();
 
-        // Search
-        if ($request->search) {
-            $query->where('title', 'like', '%' . $request->search . '%');
+        if ($request->filled('search')) {
+
+            $query->where(function ($q) use ($request) {
+
+                $q->where('title', 'like', '%' . $request->search . '%')
+                    ->orWhere('location', 'like', '%' . $request->search . '%');
+            });
         }
 
-        // Type filter
-        if ($request->type) {
-            $query->where('type', $request->type);
-        }
-
-        // Location filter
-        if ($request->location) {
+        if ($request->filled('location')) {
             $query->where('location', 'like', '%' . $request->location . '%');
         }
 
-        // Year filter (from duration)
-        if ($request->year) {
+        if ($request->filled('year')) {
             $query->where('duration', 'like', '%' . $request->year . '%');
         }
 
-        $trainings = $query->latest()->get();
+        if ($request->type === 'Bangladesh') {
 
-        $internationalTrainings = $trainings->where('type', 'International');
-        $localTrainings = $trainings->where('type', 'Bangladesh');
+            $localTrainings = (clone $query)
+                ->where('type', 'Bangladesh')
+                ->latest()
+                ->get();
+
+            $internationalTrainings = collect();
+        } elseif ($request->type === 'International') {
+
+            $localTrainings = collect();
+
+            $internationalTrainings = (clone $query)
+                ->where('type', 'International')
+                ->latest()
+                ->get();
+        } else {
+
+            $localTrainings = (clone $query)
+                ->where('type', 'Bangladesh')
+                ->latest()
+                ->get();
+
+            $internationalTrainings = (clone $query)
+                ->where('type', 'International')
+                ->latest()
+                ->get();
+        }
 
         return response()->json([
-            'html' => view('frontend.training_page.partials.training_cards', compact('trainings'))->render(),
-            'international' => view('frontend.training_page.partials.international_cards', compact('internationalTrainings'))->render(),
+            'html' => view(
+                'frontend.training_page.partials.training_cards',
+                compact('localTrainings')
+            )->render(),
+
+            'international' => view(
+                'frontend.training_page.partials.international_cards',
+                compact('internationalTrainings')
+            )->render(),
         ]);
     }
-
 
     public function experience()
     {
@@ -318,7 +345,7 @@ class WelcomePageController extends Controller
             if ($request->filled('project_year')) {
                 $query->where('project_year', $request->project_year);
             }
-            
+
             if ($request->filled('location')) {
 
                 $query->where(

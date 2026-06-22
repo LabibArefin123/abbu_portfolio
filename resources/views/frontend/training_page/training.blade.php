@@ -78,23 +78,47 @@
                         @endforeach
                     </select>
                 </div>
+            </div>
+            <div class="training-count-wrapper">
+
+                <div id="totalTrainingCount">
+
+                    Total Trainings:
+                    {{ $localTrainings->count() + $internationalTrainings->count() }}
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
+    
     {{-- TRAINING RESULT WRAPPERS --}}
     <section class="training-section">
 
         <div class="container">
 
-            <div class="section-title">
-                Bangladesh Training Programs
-            </div>
+            <div id="localTrainingSection">
 
-            <div class="row" id="trainingContainer">
-                @include('frontend.training_page.partials.training_cards')
+                <div class="section-title d-flex justify-content-between align-items-center">
+
+                    <span>
+                        Bangladesh Training Programs
+                    </span>
+
+                    <span id="localTrainingCount" class="training-count-badge">
+                        {{ $localTrainings->count() }} Trainings
+                    </span>
+
+                </div>
+
+                <div class="row" id="trainingContainer">
+
+                    @include('frontend.training_page.partials.training_cards')
+
+                </div>
+
             </div>
 
         </div>
@@ -105,13 +129,27 @@
 
         <div class="container">
 
-            <div class="section-title">
-                International Training & Study Tours
-            </div>
+            <div id="internationalTrainingSection">
 
-            <div class="row" id="internationalContainer">
-                @include('frontend.training_page.partials.international_cards')
-            </div>
+                <div class="section-title d-flex justify-content-between align-items-center">
+
+                    <span>
+                        International Training & Study Tours
+                    </span>
+
+                    <span id="internationalTrainingCount" class="training-count-badge">
+                        {{ $internationalTrainings->count() }} Trainings
+                    </span>
+
+                </div>
+
+                <div class="row" id="internationalContainer">
+
+                    @include('frontend.training_page.partials.international_cards')
+
+                </div>
+
+            </div> 
 
         </div>
 

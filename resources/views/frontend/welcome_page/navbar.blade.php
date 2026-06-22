@@ -1,14 +1,10 @@
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_base.css') }}">
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_links.css') }}">
-
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_dropdown_base.css') }}">
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_dropdown_items.css') }}">
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_dropdown_submenu.css') }}">
-
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_animation.css') }}">
-
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_buttons.css') }}">
-
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_toggle.css') }}">
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_overlay.css') }}">
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_layout/navbar/navbar_sidebar.css') }}">
@@ -30,7 +26,7 @@
                 </h5>
 
                 <small class="text-light">
-                    Former Additional Chief Engineer, LGED
+                    Additional Chief Engineer Retired, LGED
                 </small>
 
             </div>

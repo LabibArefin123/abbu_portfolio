@@ -118,6 +118,8 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_cards.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_country.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_filter.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_count.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_highlight.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_effects.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/training_page/training_responsive.css') }}">
 
@@ -202,6 +204,8 @@
     <script src="{{ asset('js/custom_frontend/welcome_page/about_section/about_image_animation.js') }}"></script>
     {{-- Training Flag JS --}}
     <script src="{{ asset('js/custom_frontend/welcome_page/training_section/training_flag.js') }}"></script>
+    <script src="{{ asset('js/custom_frontend/welcome_page/training_section/training_link.js') }}"></script>
+    <script src="{{ asset('js/custom_frontend/welcome_page/training_section/training_ajax.js') }}"></script>
     {{-- =========================
      Career Page Scripts START
    ========================= --}}
@@ -218,19 +222,14 @@
    ========================= --}}
     {{-- Helper functions (escape HTML, nl2br, highlight, word count) --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_helpers.js') }}"></script>
-
     {{-- HTML rendering logic (experience cards + suggestion box UI) --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_render.js') }}"></script>
-
     {{-- AJAX / API call handler (fetch experience data from backend) --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_fetch.js') }}"></script>
-
     {{-- Main controller (handles input events, filtering, rendering flow) --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_main.js') }}"></script>
-
     {{-- Click highlight + scroll-to-card functionality (suggestion click) --}}
     <script src="{{ asset('js/custom_frontend/experience_page/experience_highlight.js') }}"></script>
-
     {{-- =========================
       Experience Page Scripts END
    ========================= --}}
@@ -238,19 +237,14 @@
     {{-- =========================
      Project Page Scripts
    ========================= --}}
-
     {{-- Project Card Rendering UI --}}
     <script src="{{ asset('js/custom_frontend/project_page/project_render.js') }}"></script>
-
     {{-- Project Card Helper UI --}}
     <script src="{{ asset('js/custom_frontend/project_page/project_helpers.js') }}"></script>
-
     {{-- Project Search, Filter & AJAX Handler --}}
     <script src="{{ asset('js/custom_frontend/project_page/project_search.js') }}"></script>
-
     {{-- Project Count Handler --}}
     <script src="{{ asset('js/custom_frontend/project_page/project_count.js') }}"></script>
-
     {{-- =========================
      End Project Page Scripts
    ========================= --}}
@@ -258,16 +252,20 @@
     {{-- =========================
      Start Training Page Scripts
    ========================= --}}
-
+    <script>
+        window.trainingUrl = "{{ route('training') }}";
+        window.trainingAjaxUrl = "{{ route('training.ajax') }}";
+    </script>
     {{-- Training Card Animation & Rendering --}}
     <script src="{{ asset('js/custom_frontend/training_page/training_render.js') }}"></script>
-
     {{-- Training Utility & Helper Functions --}}
     <script src="{{ asset('js/custom_frontend/training_page/training_filter.js') }}"></script>
-
+    {{-- Training Count Handler --}}
+    <script src="{{ asset('js/custom_frontend/training_page/training_count.js') }}"></script>
+    {{-- Training Highlight --}}
+    <script src="{{ asset('js/custom_frontend/training_page/training_higlight.js') }}"></script>
     {{-- Training Search, Filter & AJAX Handler --}}
     <script src="{{ asset('js/custom_frontend/training_page/training_ajax.js') }}"></script>
-
     {{-- =========================
      End Training Page Scripts
    ========================= --}}
@@ -275,7 +273,6 @@
     {{-- =========================
      NAVIGATION SECTION
    ========================= --}}
-
     <script src="{{ asset('js/custom_frontend/navigation/welcome_navigation.js') }}"></script> {{-- Welcome Navigation JS --}}
     <script src="{{ asset('js/custom_frontend/navigation/navbar-toggle.js') }}"></script> {{-- Navbar Toggle (mobile menu open/close) JS --}}
     <script src="{{ asset('js/custom_frontend/navigation/scroll_progress.js') }}"></script> {{-- Scroll Progress Indicator JS --}}
@@ -284,14 +281,12 @@
     {{-- =========================
      MAPS SECTION
    ========================= --}}
-
     <script src="{{ asset('js/custom_frontend/maps/custom_top_map.js') }}"></script> {{-- Top Map Modal / Interactive Map JS --}}
 
 
     {{-- =========================
      MODAL SECTION
    ========================= --}}
-
     <script src="{{ asset('js/custom_frontend/modals/phone.js') }}"></script> {{-- Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/modals/land_phone.js') }}"></script> {{-- Land Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/modals/language.js') }}"></script> {{-- Language Selection Modal JS --}}

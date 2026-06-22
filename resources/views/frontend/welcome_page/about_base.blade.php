@@ -79,7 +79,7 @@
             <div class="col-lg-8">
 
                 <span class="badge bg-primary mb-3">
-                    Former Additional Chief Engineer (LGED)
+                    Additional Chief Engineer Retired (LGED)
                 </span>
 
                 <h2>
@@ -123,7 +123,7 @@
                     <div class="col-md-3">
                         <div class="counter-box">
                             <h3>LGED</h3>
-                            <p>Former Additional Chief Engineer</p>
+                            <p>Additional Chief Engineer (Retd)</p>
                         </div>
                     </div>
 
